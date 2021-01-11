@@ -3,7 +3,7 @@
     <div>
       <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-8 view-header">
         <h1 class="text-5xl text-white font-extrabold font-sans text-center bg-black border">
-          Integrierte Unternehmen und Produkte
+          Unternehmen und Produkte
         </h1>
       </div>
       <div class="partners-container bg-gray-700 bg-opacity-105">
