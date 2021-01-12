@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
       },
+      boxShadow: {
+        blue: '0 4px 14px 0 rgba(19, 51, 69, 0.69)',
+        white: '0 4px 14px 0 rgba(255, 255, 255, 0.69)',
+      },
     },
   },
   plugins: [

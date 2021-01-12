@@ -1,9 +1,20 @@
-import Home from './views/Home.vue'
-import About from './views/About.vue'
-import NotFound from './views/NotFound.vue'
+import Partners from './views/Partners.vue';
+import Partner from './views/Partner.vue';
 
 export let routes = [
-  { path: '/', component: Home, meta: { title: 'Home' } },
-  { path: '/about', component: About, meta: { title: 'About' } },
-  { path: '/:path(.*)', component: NotFound }
+  {
+    name: 'home',
+    path: '/',
+    component: Partners,
+  },
+  {
+    name: 'partners',
+    path: '/partners',
+    component: Partners,
+  },
+  {
+    name: 'partner',
+    component: Partner,
+    path: '/partners/:name',
+  }
 ]

@@ -1,8 +1,15 @@
-import { createApp } from 'vue'
-import './tailwind.css'
-import App from './App.vue'
-import { routes } from './routes.js'
-import { createRouter, createWebHistory } from 'vue-router'
+import './tailwind.css';
+import 'vue-material-design-icons/styles.css';
+
+import { createApp } from 'vue';
+
+import {
+  createRouter,
+  createWebHistory,
+} from 'vue-router';
+
+import App from './App.vue';
+import { routes } from './routes.js';
 
 let app = createApp(App)
 let router = createRouter({
