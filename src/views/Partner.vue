@@ -1,82 +1,12 @@
 <template>
-  <main>
-    <div>
-      <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-8 view-header">
-        <h1 class="text-5xl text-white font-extrabold font-sans text-center bg-black border">
-          Unternehmen und Produkte
-        </h1>
-      </div>
-      <div class="partners-container bg-gray-700 bg-opacity-105">
-        <div class="container lg:mx-auto ">
-          <div class="flex flex-wrap -mx-1 lg:-mx-5 ">
-            <!-- Column -->
-            <div
-              @click="expand(partner)"
-              class="fadeInOut w-full my-4 px-4 column h-full"
-              :class="{
-                'lg:w-1/3 md:w-1/2': expandedPartner !== partner.name,
-                'hidden': expandedPartner !== '' && expandedPartner !== partner.name
-              }"
-              v-for="(partner, index) in partners"
-              :key="partner.name"
-            >
-              <!-- Article -->
-              <article class="grid-item bg-gray-50 rounded-xl text-black relative flex flex-nowrap flex-col h-80 overflow-hidden shadow-blue hover:shadow-2xl">
-                  <img
-                    alt="Placeholder"
-                    class="h-auto w-full cover-image"
-                    :src="partner.imageUrl"
-                  />
-
-                <header
-                  class="flex flex-col leading-tight py-2 px-2"
-                >
-                  <h1 class="text-gray text-4xl font-extrabold">
-                      {{ partner.name }}
-                  </h1>
-                  <h2 class="text-md font-medium color-green font-sans">
-                      {{ partner.subtitle }}
-                  </h2>
-                </header>
-
-                <!-- <a class="absolute bottom-0 left-0 flex items-center text-black space-x-3" href="#">
-                    <p
-                      class="text-sm"
-                      v-for="category in partner.categories"
-                      :key="category"
-                    >
-                      <span
-                        :class="categoryToTailwindClass(category)"
-                        class="py-2 px-2 text-white font-semibold"
-                        >{{ category }}</span
-                      >
-                    </p>
-                  </a> -->
-
-                <!-- <div class="partner-description px-4 py-1 overflow-hidden">
-                  {{ partner.description || defaultDescription }}
-                  <p class="read-more"></p>
-                </div> -->
-
-                <div class="absolute bottom-0 right-0 lex justify-between h-8">
-                  <span class="relative p-4 text-lg">
-                  Mehr erfahren >
-                  </span>
-                </div>
-              </article>
-              <!-- END Article -->
-            </div>
-            <!-- END Column -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+        Moieennn
 </template>
 
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiAccount } from "@mdi/js";
+import CardCollapsed from "./CardCollapsed.vue";
+import CardExpanded from "./CardExpanded.vue";
 
 const lorem = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 
@@ -97,20 +27,22 @@ const sort = a => a.sort((a, b) => a > b ? -1 : 1);
 export default {
   components: {
     SvgIcon,
+    CardCollapsed,
+    CardExpanded
   },
   data() {
     return {
       expandedPartner: "",
       defaultDescription: lorem,
       partners: sort([
-        // {
-        //   name: "Aedifion",
-        //   subtitle: "Die Zukunft der Gebäudeautomation",
-        //   categories: ["Gebäudeautomation", "Softwareplattform"],
-        //   description:
-        //     "aedifion.io ist die hochspezialisierte Cloud-Plattform für Monitoring und Optimierung von technischer Gebäudeausrüstung und Energiesystemen. Das Werkzeug, um Ihre Betriebskosten zu senken und Ihre Energieeffizienz zu steigern – für Bestand und Neubau gleichermaßen.",
-        //   imageUrl: "https://fsa.zobj.net/crop.php?r=98yxZ74OIR-rPJXM4oIv3hj9eU34XnO-jp6Pyv3NOxBwELuTkDU2JEVG4e_BJaNeL-cyhVnM_5ldJRj2eWN90t4z5GiYF_xguMntXWPks1J_vZy7fNFSioe1TuZXDR-lG3l6cG5ppzvq93UZ",
-        // },
+        {
+          name: "Aedifion",
+          subtitle: "Die Zukunft der Gebäudeautomation",
+          categories: ["Gebäudeautomation", "Softwareplattform"],
+          description:
+            "aedifion.io ist die hochspezialisierte Cloud-Plattform für Monitoring und Optimierung von technischer Gebäudeausrüstung und Energiesystemen. Das Werkzeug, um Ihre Betriebskosten zu senken und Ihre Energieeffizienz zu steigern – für Bestand und Neubau gleichermaßen.",
+          imageUrl: "https://fsa.zobj.net/crop.php?r=98yxZ74OIR-rPJXM4oIv3hj9eU34XnO-jp6Pyv3NOxBwELuTkDU2JEVG4e_BJaNeL-cyhVnM_5ldJRj2eWN90t4z5GiYF_xguMntXWPks1J_vZy7fNFSioe1TuZXDR-lG3l6cG5ppzvq93UZ",
+        },
         {
           name: "Zumtobel",
           subtitle: 'Innovative LED-Lichtlösungen und Lichtmanagement',
@@ -214,58 +146,9 @@ export default {
 .mdi::before {
   padding-right: 0.2rem;
 }
-
-.cover-image {
-  object-fit: cover;
-  height: 10rem;
-}
-
-.partner-description {
-  position: relative; 
-}
-.partner-description .read-more { 
-  position: absolute; 
-  bottom: 0; 
-  left: 0;
-  width: 100%; 
-  text-align: center; 
-  margin: 0; padding: 30px 0; 
-  color: red;
-
-  margin-top: 2rem;
-	
-  /* "transparent" only works here because == rgba(0,0,0,0) */
-  background-image: linear-gradient(to bottom, transparent,lightgrey);
-}
-
 .grid-item {
   --tw-shadow: 2px 5px 15px 0 rgba(10, 12, 43, 0.8);
 }
-
-.view-header {
-  // position: fixed;
-  /* width: 100vw; */
-  /* height: 2.5rem; */
-}
-
-// .fadeInOut {
-//     transition-duration: 200ms;
-//     transition-property: width, height, visibility, opacity;
-//     transition-delay: 0;
-
-//     &.hidden {
-//         // visibility: hidden;
-//         opacity: 0;
-//         transition-duration: 200ms, 0;
-//         transition-property: opacity, visibility;
-//         transition-delay: 0, 200ms;
-//     }
-// }
-
-// .column {
-//   padding-top: 2rem;
-//   transition: width 0.5s, height 0.2s, transform 1s, flex-grow 1s;
-// }
 
 .partners-container {
   border-top: 1px solid rgb(0, 0, 20);

@@ -1,12 +1,21 @@
 <template>
   <main>
-    <header class="bg-white shadow site-header" v-if="$route.meta.title">
-      <div class="max-w-7xl mx-10 py-3">
-        <h1 class="text-2xl font-bold leading-tight text-gray-900">Smart Building Platform</h1>
+    <header class="bg-black shadow site-header">      
+      <div class="max-w-7xl mx-10 py-3">        
+        <h1 class="text-3xl font-bold leading-tight text-gray-100 title">
+          <img src="assets/img/center_weiss.png" class="logo"/>
+          <a class="underline-dotted" href="https://smart-commercial-building.de/">CSCB</a> / Smart Building Platform
+        </h1>
       </div>
     </header>
 
-    <router-view class="router py-14" />
+    <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-8 main-title">
+      <h1 class="text-5xl text-white font-extrabold font-sans text-center bg-black border">
+        Unternehmen und Produkte
+      </h1>
+    </div>
+
+    <router-view class="router" />
   </main>
 </template>
 
@@ -15,9 +24,27 @@
   position: fixed;
   width: 100vw;
   top: 0;
-  z-index: 100
+  z-index: 100;
+}
+
+.logo {
+  display: inline-block;
+  height: 2rem;
+  margin-right: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.title {
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.main-title {
+  margin-top: 3.5rem;
 }
 
 main {
-  background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiB2aWV3Qm94PSIwIDAgNDAsNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMDcpICI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0iIzJhNDM2NSI+PC9yZWN0PiA8cGF0aCBmaWxsPSIjMWEyMDJjIiBkPSJNMCA4IGEgMTIgMTIgMCAwIDEgMTIgMTIgYSA4IDggMCAwIDAgOCA4IHY0IGEgLTEyIC0xMiAwIDAgMSAtMTIgLTEyIGEgLTggLTggMCAwIDAgLTggLTh6Ij48L3BhdGg+PHBhdGggZmlsbD0iI2VjYzk0YiIgZD0iTTIwIDI5IGEgOSAtOSAwIDAgMCA5IC05IGEgMTEgLTExIDAgMCAxIDExIC0xMSB2MiBhIC05IDkgMCAwIDAgLTkgOSBhIC0xMSAxMSAwIDAgMSAtMTEgMTF6CiAgICAgICAgICAgICAgICBNMjAgNjkgYSA5IC05IDAgMCAwIDkgLTkgYSAxMSAtMTEgMCAwIDEgMTEgLTExIHYyIGEgLTkgOSAwIDAgMCAtOSA5IGEgLTExIDExIDAgMCAxIC0xMSAxMXoiPjwvcGF0aD48L3BhdHRlcm4+ICA8L2RlZnM+IDxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=")}
+  background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjMzIiBoZWlnaHQ9IjMzIiB2aWV3Qm94PSIwIDAgNDAsNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxOTgpICI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0icmdiYSgyNDcsIDI1MCwgMjUyLDEpIj48L3JlY3Q+IDxwYXRoIGZpbGw9InJnYmEoMTc2LCAxOTIsIDIxNiwxKSIgZD0iTSAtMTAgMzAgaCA2MCB2MSBoLTYweiBNLTEwIC0xMCBoNjAgdjEgaC02MCI+PC9wYXRoPjxwYXRoIGZpbGw9InJnYmEoMCwgMTA1LCAxODAsMSkiIGQ9Im0gLTEwIDEzIGggNjAgdjEgaC02MHogTS0xMCAtMjcgaDYwIHYxIGgtNjB6Ij48L3BhdGg+PC9wYXR0ZXJuPiAgPC9kZWZzPiA8cmVjdCBmaWxsPSJ1cmwoI3BhdHRlcm4pIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIj48L3JlY3Q+PC9zdmc+")
+  /*background: black;*/
+}
 </style>
