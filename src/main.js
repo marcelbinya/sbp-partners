@@ -7,9 +7,11 @@ import {
   createRouter,
   createWebHistory,
 } from 'vue-router';
+import Vuex from 'vuex';
 
 import App from './App.vue';
 import { routes } from './routes.js';
+import storeDefinition from './storeDefinition';
 
 let app = createApp(App)
 let router = createRouter({
@@ -34,6 +36,12 @@ if (import.meta.hot) {
   })
 }
 
+// Create a new store instance.
+const store = new Vuex.Store(storeDefinition)
+
+app.use(Vuex);
+
 app.use(router)
+app.use(store)
 
 app.mount('#app')

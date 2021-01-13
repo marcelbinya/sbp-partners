@@ -1,5 +1,66 @@
 <template>
-        Moieennn
+  <div class="partners-container">
+    <div class="container lg:mx-auto ">
+      <div class="w-full my-4 px-4 column h-full">
+        <article class="bg-gray-50 rounded-xl text-gray text-black relative partner-grid grid grid-cols-2 shadow-md py-2 px-2 border-2">
+          <header class="flex flex-col leading-tight">
+              <h1 class="text-7xl font-extrabold">
+                  {{ partner.name }}
+              </h1>
+              <h2 class="font-medium text-xl color-green font-sans">
+                  {{ partner.subtitle }}
+              </h2>
+              {{ defaultDescription }}
+          </header>
+          <div>
+            <img class="object-scale-down" src="https://www.aedifion.com/fileadmin/Compressed_Images/aed_mockup_io_optimized.png" class="w-full h-full"/>
+          </div>
+          <h1 class="text-4xl font-extrabold mt-5">
+            Integrierte Produkte
+          </h1>
+          <div class="hs-wrapper flex relative flex-row full mt-5">
+            <div class="hs-container overflow-hidden" id="products" >
+              <div class="bg-gray-200 h-80 flex justify-center border-4" v-for="(_, index) in [1,2,3,4,5,6]" :key="index">
+                <img class="object-scale-down" src="https://docs.aedifion.io/products/io/images/edge-device.png" />
+              </div>
+            </div>
+            <div class="absolute right-2 top-1/2 -my-5 arrow" @click="scrollProducts('right')">
+                <i></i>
+                <svg>
+                    <use xlink:href="#circle">
+                </svg>
+            </div>
+            <div class="absolute left-2 top-1/2 -my-5 arrow left" @click="scrollProducts('left')">
+                <i></i>
+                <svg>
+                    <use xlink:href="#circle">
+                </svg>
+            </div>
+          </div>
+          <h1 class="text-4xl font-extrabold mt-5 full text-center">
+            Kontakt
+          </h1>
+          <div/>
+          <div class="full rounded-lg my-3">
+            <div class="photo-wrapper p5-2">
+                <img class="w-32 h-32 rounded-full mx-auto" src="https://digital-real-estate-day.de/wp-content/uploads/2020/10/johannes-fuetterer.png" alt="John Doe">
+            </div>
+            <div class="p-2">
+                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Johannes Fütterer</h3>
+                <div class="text-center text-gray-400 text-xs font-semibold">
+                    <p>CEO</p>
+                </div>
+                <div class="text-center text-gray-400 text-xs font-semibold">
+                    <a href="mailto:jfuetterer@aedifion.com">jfuetterer@aedifion.com</a>
+                </div>
+                
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -7,6 +68,7 @@ import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiAccount } from "@mdi/js";
 import CardCollapsed from "./CardCollapsed.vue";
 import CardExpanded from "./CardExpanded.vue";
+import easyScroll from 'easy-scroll';
 
 const lorem = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 
@@ -14,7 +76,7 @@ const lorem = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.
  */
-const shuffle = (shouldShuffle, a) => {
+const shuffle = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
@@ -34,81 +96,28 @@ export default {
     return {
       expandedPartner: "",
       defaultDescription: lorem,
-      partners: sort([
-        {
-          name: "Aedifion",
-          subtitle: "Die Zukunft der Gebäudeautomation",
-          categories: ["Gebäudeautomation", "Softwareplattform"],
-          description:
-            "aedifion.io ist die hochspezialisierte Cloud-Plattform für Monitoring und Optimierung von technischer Gebäudeausrüstung und Energiesystemen. Das Werkzeug, um Ihre Betriebskosten zu senken und Ihre Energieeffizienz zu steigern – für Bestand und Neubau gleichermaßen.",
-          imageUrl: "https://fsa.zobj.net/crop.php?r=98yxZ74OIR-rPJXM4oIv3hj9eU34XnO-jp6Pyv3NOxBwELuTkDU2JEVG4e_BJaNeL-cyhVnM_5ldJRj2eWN90t4z5GiYF_xguMntXWPks1J_vZy7fNFSioe1TuZXDR-lG3l6cG5ppzvq93UZ",
-        },
-        {
-          name: "Zumtobel",
-          subtitle: 'Innovative LED-Lichtlösungen und Lichtmanagement',
-          categories: ["Leuchten"],
-          imageUrl: "https://www.zumtobel.com/media/startpage/Kunst_2100x975_01.jpg",
-        },
-        // {
-        //   name: "Landmarken AG",
-        //   subtitle: "Wir entwickeln die Zukunft der Städte.",
-        //   categories: ["Projektentwicklung"],
-        //   imageUrl: "assets/img/csm_Moringa_HafenCity_vorne_bae70fe086.jpg",
-        // },
-        // {
-        //   name: "Mennekes",
-        //   imageUrl: "https://www.heisler-elektro.de/media/de/marke_hersteller_produkte/mennekes/cuyd.jpg"
-        // },
-        // {
-        //   name: "MOON Power",
-        //   subtitle: "Elektromobilität Alltag werden lassen",
-        //   imageUrl: "https://autoundwirtschaft.at/NewsImages-870x580/pic31830_1-mooncity-in-der-sterneckstrasse.png"
-        // },
-        {
-          name: "Essentry",
-          subtitle: "Automatisierte Zugangsverwaltung für Gebäude",
-          imageUrl: "https://images.channelpartner.de/bdb/3300312/765x431.jpg"
-        },
-        {
-          name: "LUCEM Lichtbeton",
-          subtitle: "Lorem Ipsum",
-          categories: ["Gebäudeautomation", "Softwareplattform"],
-          description:
-            "---",
-          imageUrl: "https://lucem.com/de/wp-content/uploads/sites/3/2020/08/LUCEM-Stairs-Bielefeld-Germany-25.jpeg",
-        },
-        {
-          name: "Schneider Electric",
-          subtitle: "Digitale Energie- und Automatisierungslösungen",
-          categories: ["Leuchten", "Umweltsensorik"],
-          imageUrl: "https://www.se.com/de/de/assets/521/media/158817/1200/SE_Banner_Blog_Barbara_Frei_IC-2400x706.jpg",
-        },
-        {
-          name: "Signify",
-          subtitle: "Das Potential von Licht entfesseln",
-          categories: ["Leuchten", "Umweltsensorik"],
-          imageUrl: "https://www.signify.com/content/dam/signify/en-aa/about/news/2020/20200908-signify-achieves-carbon-neutrality-and-sets-course-to-double-its-positive-impact-on-the-environment-and-society/blbw-2025-header-l.jpg",
-        },
-        {
-          name: "S O NAH",
-          subtitle: "Drive home, not circles",
-          categories: ["Gebäudeautomation", "Softwareplattform"],
-          description:
-            "aedifion.io ist die hochspezialisierte Cloud-Plattform für Monitoring und Optimierung von technischer Gebäudeausrüstung und Energiesystemen. Das Werkzeug, um Ihre Betriebskosten zu senken und Ihre Energieeffizienz zu steigern – für Bestand und Neubau gleichermaßen.",
-          imageUrl: "assets/img/bkg_ws_3.jpg",
-        },
-        // {
-        //   name: "w-tec",
-        //   categories: ["Leuchten"],
-        //   description:
-        //     "Die smartengine-Technologie ist eine Infrastruktur für Gebäudeintelligenz und Lichtsteuerung. Herstellerneutrale LED-Leuchten werden mittels herkömmlicher Datenkabel mit Spannung versorgt und gleichzeitig multifunktionale Sensoren in diese Strom-Infrastruktur eingebunden. Die Sensordaten werden u.a. zur optimierten Steuerung von Licht, Heizung, Kühlung sowie Lüftung verwendet und liefern wertvolle Einblicke in die Gebäudenutzung.",
-        //   imageUrl: "https://wtec.io/wp-content/uploads/2019/09/Gymshark.jpg",
-        // },
-      ]),
       path: mdiAccount,
     };
   },
+  computed: {
+    partner() {
+      return this.$store.getters.byEscapedName(this.$route.params.name);
+    }
+  },
+  mounted() {
+    if(!this.partner)
+      return this.$router.replace({ name: 'partners' });
+  },
   methods: {
+    scrollProducts(direction) {
+      easyScroll({
+        'scrollableDomEle': document.getElementById("products"),
+        'direction': direction,
+        'duration': 400,
+        'easingPreset': 'easeOutCubic',
+        'scrollAmount': 450
+      });
+    },
     expand(partner) {
       partner.expanded = !partner.expanded;
       this.expandedPartner = this.expandedPartner.length === 0 ? partner.name : "";
@@ -150,8 +159,108 @@ export default {
   --tw-shadow: 2px 5px 15px 0 rgba(10, 12, 43, 0.8);
 }
 
-.partners-container {
-  border-top: 1px solid rgb(0, 0, 20);
+.partner-grid > .full {
+  grid-column: 1 / -1;
+}
+
+.hs-container {
+  --gutter: 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, calc(40% - 40px));
+  grid-template-rows: minmax(150px, 1fr);
+  grid-auto-flow: column;
+  padding-bottom: calc(-.25 * 3px);
+}
+
+.hs::before,
+.hs::after {
+  content: ‘’;
+}
+
+.arrow {
+    --active: rgb(0, 0, 0);
+    --border: rgb(255, 255, 255);
+    width: 44px;
+    height: 44px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    &:hover {
+      --border: rgba(255, 255, 255, .5);
+    }
+    &.left {
+        transform: scaleX(-1);
+    }
+    i {
+        display: block;
+        position: absolute;
+        margin: -10px 0 0 -10px;
+        width: 20px;
+        height: 20px;
+        left: 50%;
+        top: 50%;
+        &:before,
+        &:after {
+            content: '';
+            width: 10px;
+            height: 2px;
+            border-radius: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: var(--active);
+            margin: -1px 0 0 -5px;
+            display: block;
+            transform-origin: 9px 50%;
+        }
+        &:before {
+            transform: rotate(-40deg);
+        }
+        &:after {
+            transform: rotate(40deg);
+        }
+    }
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 1px;
+        right: 1px;
+        top: 1px;
+        bottom: 1px;
+        border-radius: 50%;
+        border: 2px solid var(--border);
+    }
+    svg {
+        width: 44px;
+        height: 44px;
+        display: block;
+        position: relative;
+        z-index: 1;
+        color: var(--active);
+        stroke-width: 2px;
+        stroke-dashoffset: 126;
+        stroke-dasharray: 126 126 0;
+        transform: rotate(0deg);
+    }
+    &.animate {
+        svg {
+            animation: stroke 1s ease forwards .3s;
+        }
+        i {
+            animation: arrow 1.6s ease forwards;
+            &:before {
+                animation: arrowUp 1.6s ease forwards;
+            }
+            &:after {
+                animation: arrowDown 1.6s ease forwards;
+            }
+        }
+    }
 }
 
 </style>
