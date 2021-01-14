@@ -13,10 +13,18 @@ import App from './App.vue';
 import { routes } from './routes.js';
 import storeDefinition from './storeDefinition';
 
+//
+// setup vue app
+//
+
 let app = createApp(App)
 let router = createRouter({
   history: createWebHistory(),
-  routes: import.meta.hot ? [] : routes
+  routes: import.meta.hot ? [] : routes,
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 if (import.meta.hot) {
