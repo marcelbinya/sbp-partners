@@ -22,7 +22,7 @@ export default {
                   products: [{
                     name: "Edge Device",
                     imageUrl: "https://docs.aedifion.io/products/io/images/edge-device.png"
-                  }]
+                  }],
                 },
                 {
                   name: "Zumtobel",
@@ -79,11 +79,81 @@ export default {
                   imageUrl: "assets/img/bkg_ws_3.jpg",
                 },
                 {
-                  name: "w-tec",
+                  name: "wtec",
                   categories: ["Leuchten"],
                   description:
-                    "Die smartengine-Technologie ist eine Infrastruktur für Gebäudeintelligenz und Lichtsteuerung. Herstellerneutrale LED-Leuchten werden mittels herkömmlicher Datenkabel mit Spannung versorgt und gleichzeitig multifunktionale Sensoren in diese Strom-Infrastruktur eingebunden. Die Sensordaten werden u.a. zur optimierten Steuerung von Licht, Heizung, Kühlung sowie Lüftung verwendet und liefern wertvolle Einblicke in die Gebäudenutzung.",
+                    `wtec entwickelt zukunftsweisende Produkte mit klarem Fokus auf Nachhaltigkeit. Entwickler in Frankfurt / Rhein-Main und im Silicon Valley arbeiten konsequent an innovativen Produkten und Lösungen, die weltweit erfolgreich für führende BlueChip-Unternehmen eingesetzt werden. Mit den Entwicklungsschwerpunkten auf Technologie, Nutzen und Wirkung trägt wtec zur Schaffung von echten Werten und wahrer Gebäudeintelligenz bei.`,
                   imageUrl: "https://wtec.io/wp-content/uploads/2019/09/Gymshark.jpg",
+                  moreImages: ["https://wtec.io/wp-content/uploads/2020/09/Topologie_neu.png"],
+                  products: [{
+                    name: "smartengine",
+                    imageUrl: "https://wtec.io/wp-content/uploads/2019/07/smartengine-1-e1569848705959.png",
+                    description: `Die smartengine-Technologie ist eine Infrastruktur für Gebäudeintelligenz und
+                    Lichtsteuerung. Herstellerneutrale LED-Leuchten werden mittels herkömmlicher Datenkabel mit
+                    Spannung versorgt und gleichzeitig multifunktionale Sensoren in diese Strom-Infrastruktur
+                    eingebunden. Durch die Technologie werden zahlreiche Infrastrukturen ersetzt und vereinfacht
+                    sowie hohe Einsparungen im Betrieb erzielt.`,
+                    moreInfoUrl: 'https://wtec.io/de/smartengine/',
+                  }, {
+                    name: "smartdirector",
+                    imageUrl: "https://wtec.io/wp-content/uploads/2019/07/director_frei-1024x274.png",
+                    description: `Der smartdirector ist für die logische Verwaltung von bis zu 40 smartengines oder 2.000 Sensoren zuständig. Die gesammelten Sensordaten werden hier gespeichert. Weiterhin stehen eine integrierte, offene API und eine BACnet/IP Schnittstelle für Gebäudeleittechnik (GLT) bereit.`,
+                    moreInfoUrl: 'https://wtec.io/de/smartdirector/'
+                  }, {
+                    name: "smartengine",
+                    imageUrl: "https://wtec.io/wp-content/uploads/2019/07/smartengine-1-e1569848705959.png",
+                    description: `Die smartengine-Technologie ist eine Infrastruktur für Gebäudeintelligenz und
+                    Lichtsteuerung. Herstellerneutrale LED-Leuchten werden mittels herkömmlicher Datenkabel mit
+                    Spannung versorgt und gleichzeitig multifunktionale Sensoren in diese Strom-Infrastruktur
+                    eingebunden. Durch die Technologie werden zahlreiche Infrastrukturen ersetzt und vereinfacht
+                    sowie hohe Einsparungen im Betrieb erzielt.`
+                  }],
+                  contact: {
+                    name: "Henning von Gagern",
+                    position: "",
+                    imageUrl: "https://wtec.io/wp-content/uploads/2019/10/Henning_whiteBackground.png",
+                    email: "HvonGagern@wtec.io"
+                  },
+                  liveData: {
+                    url: "https://1src.tech/api/things/12845/state",
+                    mapping: {
+                      inputPower: {
+                        unit: "mW",
+                        label: "Eingehende Leistung",
+                        icon: "mdi-lightning-bolt-outline"
+                      },
+                      outputPower: {
+                        unit: "mW",
+                        label: "Ausgehende Leistung",
+                        icon: "mdi-lightning-bolt-outline"
+                      },
+                      enginesConnected: {
+                        label: "Erreichbare Smartengines",
+                        icon: "mdi-server",
+                        convert: value => `${value} von 2`
+                      },
+                      ceilingTemperature: {
+                        unit: "°C",
+                        label: "Deckentemperatur",
+                        icon: "mdi-temperature-celsius",
+                      },
+                      lastMotion: {
+                        unit: "",
+                        label: "Letzte Bewegung",
+                        icon: "mdi-run",
+                        convert(value) {
+                          let secondsAgo = Math.floor(Date.now()/1000 - value);
+                          let hours = Math.floor(secondsAgo / 60 / 60);
+                          let minutes = Math.floor(secondsAgo / 60 % 60);
+                          if(hours > 0)
+                            return `vor ${hours} Stunde${hours > 1 ? 'n': ''}, ${minutes} Minute${minutes == 1 ? '' : 'n'}`;
+                          else
+                            return `vor ${minutes} Minute${minutes == 1 ? '' : 'n'}`;
+                        }
+                      }
+                    }
+                  }
+                  
                 },
               ]),
         }

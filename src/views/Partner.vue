@@ -2,7 +2,7 @@
   <div class="partners-container">
     <div class="container lg:mx-auto ">
       <div class="w-full my-4 px-4 column h-full">
-        <article class="bg-gray-50 rounded-xl text-gray text-black relative partner-grid grid grid-cols-2 shadow-md py-2 px-2 border-2">
+        <article class="bg-gray-50 rounded-xl text-gray text-black relative partner-grid grid grid-cols-2 shadow-md p-6 border-2">
           <header class="flex flex-col leading-tight">
               <h1 class="text-7xl font-extrabold">
                   {{ partner.name }}
@@ -10,34 +10,56 @@
               <h2 class="font-medium text-xl color-green font-sans">
                   {{ partner.subtitle }}
               </h2>
-              {{ defaultDescription }}
           </header>
-          <div>
-            <img class="object-scale-down" src="https://www.aedifion.com/fileadmin/Compressed_Images/aed_mockup_io_optimized.png" class="w-full h-full"/>
+          <div/>
+          <div class="text-xl">
+            {{ partner.description }}
           </div>
-          <h1 class="text-4xl font-extrabold mt-5">
-            Integrierte Produkte
+          <div class="-my-5 mx-auto">
+            <h1 class="underline text-xl font-extrabold inline font-mono">Live-Daten aus Aachen</h1>
+            <div class="livenow inline-block">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div v-for="(state, key) in liveState" :key="key">
+              <span class="mdi text-lg" :class="state.icon"></span>
+              <span class="font-semibold text-lg">{{ state.label }}</span> {{ state.value }} {{ state.unit }}</div>
+          </div>
+          <h1 class="text-4xl font-extrabold mt-5 full pt-5">
+            Integrierte Produkte 
           </h1>
           <div class="hs-wrapper flex relative flex-row full mt-5">
-            <div class="hs-container overflow-hidden" id="products" >
-              <div class="bg-gray-200 h-80 flex flex-col justify-start align-top border-4 w-96" v-for="(product, index) in partner.products" :key="index">
+            <div ref="products" class="hs-container overflow-hidden" id="products" >
+              <div class="relative pb-5 bg-gray-100 shadow-inner shadow-xl flex flex-col overflow-hidden pt-2 justify-start align-top w-96" v-for="(product, index) in partner.products" :key="index">
                 <h1 class="text-center font-bold text-3xl">{{ product.name }}</h1>    
-                <img class="object-contain w-full" :src="product.imageUrl" />
-                {{ defaultDescription }}           
+                <img class="object-contain w-full px-5" :src="product.imageUrl" />
+                <div class="font-normal px-5 pt-5 pb-8 text-center">{{ product.description }}</div>
+                <div class="text-center w-full bg-blue-800 text-white text-2xl font-sans font-bold absolute bottom-0">
+                  <span class="mdi mdi-search-web"></span> <a :href="product.moreInfoUrl" class="font-mono">Mehr Informationen 
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="absolute right-2 top-1/2 -my-5 arrow" @click="scrollProducts('right')">
+            <div class="absolute right-2 top-0 -my-5 arrow" @click="scrollProducts('right')">
                 <i></i>
                 <svg>
                     <use xlink:href="#circle">
                 </svg>
             </div>
-            <div class="absolute left-2 bottom-0 -my-5 arrow left" @click="scrollProducts('left')">
+            <div class="hidden">{{ $refs.products }}</div>
+            <div v-if="$refs.products ? $refs.products.scrollLeft > 0 : false " class="absolute top-0 -my-5 arrow left" @click="scrollProducts('left')">
                 <i></i>
                 <svg>
                     <use xlink:href="#circle">
                 </svg>
             </div>
+          </div>
+          <h1 class="text-4xl font-extrabold my-5 full">
+            Weitere Impressionen 
+          </h1>
+          <div class="full" v-for="(image, index) in partner.moreImages" :key="index"> 
+            <img class="object-cover mx-auto" :src="image"/>
           </div>
           <h1 class="text-4xl font-extrabold mt-5 full text-center">
             Kontakt
@@ -45,15 +67,15 @@
           <div/>
           <div class="full rounded-lg my-3">
             <div class="photo-wrapper p5-2">
-                <img class="w-32 h-32 rounded-full mx-auto" src="https://digital-real-estate-day.de/wp-content/uploads/2020/10/johannes-fuetterer.png" alt="John Doe">
+                <img class="w-32 h-32 rounded-full object-cover mx-auto" :src="partner.contact.imageUrl" :alt="`Bild von ${partner.contact.name}`">
             </div>
             <div class="p-2">
-                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Johannes Fütterer</h3>
+                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{ partner.contact.name }}</h3>
                 <div class="text-center text-gray-400 text-xs font-semibold">
-                    <p>CEO</p>
+                    <p>{{ partner.contact.position }}</p>
                 </div>
                 <div class="text-center text-gray-400 text-xs font-semibold">
-                    <a href="mailto:jfuetterer@aedifion.com">jfuetterer@aedifion.com</a>
+                    <a :href="`mailto:${ partner.contact.email }`">{{ partner.contact.email }}</a>
                 </div>
                 
             </div>
@@ -71,6 +93,7 @@ import { mdiAccount } from "@mdi/js";
 import CardCollapsed from "./CardCollapsed.vue";
 import CardExpanded from "./CardExpanded.vue";
 import easyScroll from 'easy-scroll';
+import axios from 'axios';
 
 const lorem = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 
@@ -99,6 +122,8 @@ export default {
       expandedPartner: "",
       defaultDescription: lorem,
       path: mdiAccount,
+      intervalId: null,
+      liveState: {}
     };
   },
   computed: {
@@ -109,15 +134,40 @@ export default {
   mounted() {
     if(!this.partner)
       return this.$router.replace({ name: 'partners' });
+
+    if(this.partner.liveData.url)
+    {
+      this.intervalId = setInterval(this.refreshLiveData, 1000);
+      this.refreshLiveData();
+    }
+  },
+  unmounted() {
+    if(this.intervalId !== null)
+      clearInterval(this.intervalId)
   },
   methods: {
+    async refreshLiveData() {
+        let response = (await axios.get(this.partner.liveData.url)).data;
+        console.log(response.result)
+        if(response.result !== "success") return;
+
+        Object
+          .entries(response.data)
+          .filter(([property]) => (property in this.partner.liveData.mapping))
+          .forEach(([property, state]) => {
+            let value = state.value;
+            if('convert' in this.partner.liveData.mapping[property])
+              value = this.partner.liveData.mapping[property].convert(value);
+            this.liveState[property] = {value, ...this.partner.liveData.mapping[property]};
+        })
+    },
     scrollProducts(direction) {
       easyScroll({
         'scrollableDomEle': document.getElementById("products"),
         'direction': direction,
         'duration': 400,
         'easingPreset': 'easeOutCubic',
-        'scrollAmount': 450
+        'scrollAmount': 250
       });
     },
     expand(partner) {
@@ -169,7 +219,7 @@ export default {
   --gutter: 20px;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(6, calc(40% - 40px));
+  // grid-template-columns: repeat(6, calc(40% - 40px));
   grid-template-rows: minmax(150px, 1fr);
   grid-auto-flow: column;
   padding-bottom: calc(-.25 * 3px);
@@ -186,7 +236,7 @@ export default {
     width: 44px;
     height: 44px;
     background-color: white;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     cursor: pointer;
     transition: border-color 0.2s;
@@ -263,6 +313,58 @@ export default {
             }
         }
     }
+}
+
+.livenow {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+}
+.livenow > div {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  position: absolute;
+  margin: 0 auto;
+  border:3px solid rgba(255,255,255,1);
+  background-color: red;
+  -webkit-animation: live 3s infinite ease-in-out;
+  animation: live 3s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  &:nth-child(1) {
+    background-color:rgba(255,255,255,0.3);
+    background-color:rgba(255,255,255,1);
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+  }
+  &:nth-child(2) {
+    -webkit-animation-delay: 0.16s;
+    animation-delay: 0.5s;
+  }
+  &:nth-child(3) {
+    -webkit-animation-delay: 0.42s;
+    animation-delay: 0.42s;
+    border: 5px solid rgba(255,255,255, .95);
+  }
+  &:nth-child(4) {
+    border:3px solid rgba(255,255,255,1);
+    -webkit-animation-delay: -0.42s;
+    animation-delay: -0.42s;
+  }
+}
+
+@keyframes live {
+  0%, 66% { 
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  } 33%, 100% { 
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+  }
 }
 
 </style>
