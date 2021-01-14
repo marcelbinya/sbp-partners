@@ -20,8 +20,10 @@
           </h1>
           <div class="hs-wrapper flex relative flex-row full mt-5">
             <div class="hs-container overflow-hidden" id="products" >
-              <div class="bg-gray-200 h-80 flex justify-center border-4" v-for="(_, index) in [1,2,3,4,5,6]" :key="index">
-                <img class="object-scale-down" src="https://docs.aedifion.io/products/io/images/edge-device.png" />
+              <div class="bg-gray-200 h-80 flex flex-col justify-start align-top border-4 w-96" v-for="(product, index) in partner.products" :key="index">
+                <h1 class="text-center font-bold text-3xl">{{ product.name }}</h1>    
+                <img class="object-contain w-full" :src="product.imageUrl" />
+                {{ defaultDescription }}           
               </div>
             </div>
             <div class="absolute right-2 top-1/2 -my-5 arrow" @click="scrollProducts('right')">
@@ -30,7 +32,7 @@
                     <use xlink:href="#circle">
                 </svg>
             </div>
-            <div class="absolute left-2 top-1/2 -my-5 arrow left" @click="scrollProducts('left')">
+            <div class="absolute left-2 bottom-0 -my-5 arrow left" @click="scrollProducts('left')">
                 <i></i>
                 <svg>
                     <use xlink:href="#circle">
