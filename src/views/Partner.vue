@@ -44,14 +44,14 @@
             <div class="absolute right-2 top-0 -my-5 arrow" @click="scrollProducts('right')">
                 <i></i>
                 <svg>
-                    <use xlink:href="#circle">
+                    <use xlink:href="#circle" />
                 </svg>
             </div>
             <div class="hidden">{{ $refs.products }}</div>
             <div v-if="$refs.products ? $refs.products.scrollLeft > 0 : false " class="absolute top-0 -my-5 arrow left" @click="scrollProducts('left')">
                 <i></i>
                 <svg>
-                    <use xlink:href="#circle">
+                    <use xlink:href="#circle" />
                 </svg>
             </div>
           </div>
