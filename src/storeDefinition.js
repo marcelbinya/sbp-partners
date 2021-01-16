@@ -1,6 +1,6 @@
-const sort = a => a.sort((a, b) => a > b ? -1 : 1);
+const sort = a => a.sort((a, b) => a.name < b.name ? -1 : 1);
 
-const shuffle = (shouldShuffle, a) => {
+const shuffle = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
@@ -21,8 +21,25 @@ export default {
                   imageUrl: "https://fsa.zobj.net/crop.php?r=98yxZ74OIR-rPJXM4oIv3hj9eU34XnO-jp6Pyv3NOxBwELuTkDU2JEVG4e_BJaNeL-cyhVnM_5ldJRj2eWN90t4z5GiYF_xguMntXWPks1J_vZy7fNFSioe1TuZXDR-lG3l6cG5ppzvq93UZ",
                   products: [{
                     name: "Edge Device",
-                    imageUrl: "https://docs.aedifion.io/products/io/images/edge-device.png"
+                    imageUrl: "https://docs.aedifion.io/products/io/images/edge-device.png",
+                    description: "Das Edge-Device ist ein zertifizierter Industrie-PC, welcher sich mit sämtlichen Sensoren, Aktoren und Steuergeräten mittels der unterstützten Protokolle verbindet.",
+                    moreInfoUrl: "https://docs.aedifion.io/products/io/edge-device/"
                   }],
+                },
+                {
+                  name: "Enlighted",
+                  subtitle: "Beyond Smart Buildings. Brilliant Buildings",
+                  imageUrl: "https://247848-766948-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/05/enlighted.jpg"
+                },
+                {
+                  name: "formitas",
+                  subtitle: "Wir digitalisieren die Bauwelt",
+                  imageUrl: "https://www.schau-ins-rheinland.de/wp-content/uploads/2019/07/formitas-1.jpg", 
+                },
+                {
+                  name: "Compleo",
+                  subtitle: "plug in the future.",
+                  imageUrl: "https://www.compleo-cs.com/fileadmin/_processed_/d/7/csm_compo-startseite-lastman_851fe98c99.jpg"
                 },
                 {
                   name: "Zumtobel",
@@ -36,15 +53,25 @@ export default {
                 //   categories: ["Projektentwicklung"],
                 //   imageUrl: "assets/img/csm_Moringa_HafenCity_vorne_bae70fe086.jpg",
                 // },
-                // {
-                //   name: "Mennekes",
-                //   imageUrl: "https://www.heisler-elektro.de/media/de/marke_hersteller_produkte/mennekes/cuyd.jpg"
-                // },
-                // {
-                //   name: "MOON Power",
-                //   subtitle: "Elektromobilität Alltag werden lassen",
-                //   imageUrl: "https://autoundwirtschaft.at/NewsImages-870x580/pic31830_1-mooncity-in-der-sterneckstrasse.png"
-                // },
+                {
+                  name: "Mennekes",
+                  imageUrl: "https://www.heisler-elektro.de/media/de/marke_hersteller_produkte/mennekes/cuyd.jpg"
+                },
+                {
+                  name: "MOON Power",
+                  subtitle: "Elektromobilität Alltag werden lassen",
+                  imageUrl: "https://autoundwirtschaft.at/NewsImages-870x580/pic31830_1-mooncity-in-der-sterneckstrasse.png"
+                },
+                {
+                  name: "Phoenix Contact",
+                  subtitle: "Komponenten und Lösungen in der Elektrotechnik & Automation",
+                  imageUrl: "https://www.electrive.net/wp-content/uploads/2020/06/phoenix-contact-polen-poland-2020-01-min.png"
+                },
+                {
+                  name: "American Tower",
+                  subtitle: "Drahtlose Infrastruktur für eine vernetzte Welt",
+                  imageUrl: "https://americantower.com.de//Assets/beta.americantower.com/uploads/images/heroes/us-tower.jpg"
+                },
                 {
                   name: "Essentry",
                   subtitle: "Automatisierte Zugangsverwaltung für Gebäude",
@@ -66,7 +93,7 @@ export default {
                 },
                 {
                   name: "Signify",
-                  subtitle: "Das Potential von Licht entfesseln",
+                  subtitle: "The meaning of light",
                   categories: ["Leuchten", "Umweltsensorik"],
                   imageUrl: "https://www.signify.com/content/dam/signify/en-aa/about/news/2020/20200908-signify-achieves-carbon-neutrality-and-sets-course-to-double-its-positive-impact-on-the-environment-and-society/blbw-2025-header-l.jpg",
                 },
@@ -75,8 +102,19 @@ export default {
                   subtitle: "Drive home, not circles",
                   categories: ["Gebäudeautomation", "Softwareplattform"],
                   description:
-                    "aedifion.io ist die hochspezialisierte Cloud-Plattform für Monitoring und Optimierung von technischer Gebäudeausrüstung und Energiesystemen. Das Werkzeug, um Ihre Betriebskosten zu senken und Ihre Energieeffizienz zu steigern – für Bestand und Neubau gleichermaßen.",
+                    "S O NAH ist ein Aachener Unternehmen, welches die Parkplatzsuche und das Parkplatzmanagement mithilfe von Daten und der Entwicklung von Hard- und Softwarelösungen optimiert. Hierzu integriert S O NAH smarte Sensorik in die vorhandene Infrastruktur und nutzt einen Machine Learning Algorithmus. Mithilfe des S O NAH-Systems können gleichzeitig der Echtzeit-Belegungszustand von Einzelstellplätzen (Stellplatzdetektion) sowie die Anzahl der Durchfahrten ermittelt werden. Die generierten Informationen können online abgerufen und in jedes bestehende Parkleitsystem eingebunden werden.",
                   imageUrl: "assets/img/bkg_ws_3.jpg",
+                  products: [{
+                    name: "Parkplatzsensor",
+                    imageUrl: "https://sonah.tech/images/long_term_asset_2x.jpg?crc=3891109166",
+                    description: `Lorem Ipsum`,
+                    moreInfoUrl: 'https://sonah.tech/technology.html'
+                  }]
+                },
+                {
+                  name: "Thing-it",
+                  subtitle: "Buildings. People. Things. Connected.",
+                  imageUrl: "https://www.homeandsmart.de/var/site/storage/images/_aliases/fixed_col_12/1/2/7/2/272721-1-ger-DE/thing-it-cloud-plattform-mit-app.jpg",
                 },
                 {
                   name: "wtec",

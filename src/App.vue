@@ -1,18 +1,20 @@
 <template>
   <main>
     <header class="bg-black shadow site-header">      
-      <div class="max-w-7xl mx-10 py-3">        
-        <h1 class="text-3xl font-bold leading-tight text-gray-100 title">
-          <img src="/assets/img/center_weiss.png" class="logo"/>
+      <div class="max-w-7xl lg:mx-10 py-3">        
+        <h1 class="text-2xl lg:text-3xl font-bold font-sans leading-tight text-gray-100 title text-center lg:text-left">
+          <img src="/assets/img/center_weiss.png" class="logo hidden lg:inline"/>
+          <span class = "hidden lg:inline">
           <a class="underline-dotted" href="https://smart-commercial-building.de/">CSCB</a> /
+          </span>
           <router-link to="/">Smart Building Platform</router-link>
         </h1>
       </div>
     </header>
 
-    <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-8 main-title">
-      <h1 class="text-5xl text-white font-extrabold font-sans text-center bg-black border">
-        Unternehmen und Produkte
+    <div class="max-w-7xl mx-auto sm:px-6 lg:p-8 main-title">
+      <h1 class="text-2xl lg:text-5xl text-white font-bold font-sans text-center bg-black border shadow-2xl">
+        Unternehmen & Produkte
       </h1>
     </div>
 
@@ -45,7 +47,6 @@ body {
 }
 
 .logo {
-  display: inline-block;
   height: 2rem;
   margin-right: 0.6rem;
   margin-bottom: 0.3rem;

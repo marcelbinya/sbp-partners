@@ -67,15 +67,15 @@
           <div/>
           <div class="full rounded-lg my-3">
             <div class="photo-wrapper p5-2">
-                <img class="w-32 h-32 rounded-full object-cover mx-auto" :src="partner.contact.imageUrl" :alt="`Bild von ${partner.contact.name}`">
+                <img class="w-32 h-32 rounded-full object-cover mx-auto" :src="partner.contact ? partner.contact.imageUrl : ''" :alt="`Kontaktbild`">
             </div>
             <div class="p-2">
-                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{ partner.contact.name }}</h3>
+                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{ partner.contact ? partner.contact.name : '' }}</h3>
                 <div class="text-center text-gray-400 text-xs font-semibold">
-                    <p>{{ partner.contact.position }}</p>
+                    <p>{{ partner.contact ? partner.contact.position : '' }}</p>
                 </div>
                 <div class="text-center text-gray-400 text-xs font-semibold">
-                    <a :href="`mailto:${ partner.contact.email }`">{{ partner.contact.email }}</a>
+                    <a :href="`mailto:${ partner.contact ? partner.contact.email : '' }`">{{ partner.contact ? partner.contact.email : '' }}</a>
                 </div>
                 
             </div>
@@ -331,8 +331,8 @@ export default {
   margin: 0 auto;
   border:3px solid rgba(255,255,255,1);
   background-color: red;
-  -webkit-animation: live 3s infinite ease-in-out;
-  animation: live 3s infinite ease-in-out;
+  -webkit-animation: live 5s infinite ease-in-out;
+  animation: live 5s infinite ease-in-out;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   &:nth-child(1) {
@@ -358,12 +358,12 @@ export default {
 }
 
 @keyframes live {
-  0%, 66% { 
+  0%, 50%, 100% { 
     transform: scale(1);
     -webkit-transform: scale(1);
-  } 33%, 100% { 
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
+  } 25%, 75% { 
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
   }
 }
 
