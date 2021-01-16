@@ -17,7 +17,7 @@
           </div>
           <div class="-my-5 mx-auto">
             <h1 class="underline text-xl font-extrabold inline font-mono">Live-Daten aus Aachen</h1>
-            <div class="livenow inline-block">
+            <div class="livenow inline-block my-2">
               <div></div>
               <div></div>
               <div></div>
@@ -314,20 +314,19 @@ export default {
 }
 
 .livenow {
-  width: 25px;
-  height: 25px;
-  margin: 0 auto;
+  width: 1rem;
+  height: 1rem;
   display: inline-block;
   position: relative;
 }
 .livenow > div {
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 100%;
   position: absolute;
   margin: 0 auto;
-  border:3px solid rgba(255,255,255,1);
+  border: 5px solid rgba(255,255,255,1);
   background-color: red;
   -webkit-animation: live 5s infinite ease-in-out;
   animation: live 5s infinite ease-in-out;
@@ -346,7 +345,7 @@ export default {
   &:nth-child(3) {
     -webkit-animation-delay: 0.42s;
     animation-delay: 0.42s;
-    border: 5px solid rgba(255,255,255, .95);
+    border: 2px solid rgba(255,255,255, .95);
   }
   &:nth-child(4) {
     border:3px solid rgba(255,255,255,1);
@@ -357,11 +356,16 @@ export default {
 
 @keyframes live {
   0%, 50%, 100% { 
+    transform: scale(0.75);
+    border-color: red;
+    -webkit-transform: scale(0.8);
+  } 25% { 
     transform: scale(1);
-    -webkit-transform: scale(1);
-  } 25%, 75% { 
-    transform: scale(0.7);
-    -webkit-transform: scale(0.7);
+    border-color: red;
+    -webkit-transform: scale(0.5);
+  } 75% {
+    border-color: red;
+    transform: scale(0.4);
   }
 }
 

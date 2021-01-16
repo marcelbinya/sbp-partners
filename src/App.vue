@@ -1,7 +1,7 @@
 <template>
   <main>
-    <header class="bg-black shadow site-header">      
-      <div class="max-w-7xl lg:mx-10 py-3">        
+    <header class="bg-black site-header">      
+      <div class="max-w-7xl lg:mx-10 pt-3">        
         <h1 class="text-2xl lg:text-3xl font-bold font-sans leading-tight text-gray-100 title text-center lg:text-left">
           <img src="/assets/img/center_weiss.png" class="logo hidden lg:inline"/>
           <span class = "hidden lg:inline">
@@ -10,15 +10,14 @@
           <router-link to="/">Smart Building Platform</router-link>
         </h1>
       </div>
+      <div class="w-full">
+        <h1 class="py-2 text-2xl lg:text-5xl text-white font-bold font-sans text-center main-title bg-black">
+          Unternehmen & Produkte
+        </h1>
+      </div>
     </header>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:p-8 main-title">
-      <h1 class="text-2xl lg:text-5xl text-white font-bold font-sans text-center bg-black border shadow-2xl">
-        Unternehmen & Produkte
-      </h1>
-    </div>
-
-    <router-view class="router" />
+    <router-view class="router py-40" />
   </main>
 </template>
 
@@ -58,7 +57,6 @@ body {
 }
 
 .main-title {
-  margin-top: 3.5rem;
 }
 
 main {

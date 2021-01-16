@@ -1,7 +1,7 @@
 <template>
-  <div class="partners-container bg-opacity-105">
-    <div class="container lg:mx-auto ">
-      <div class="flex flex-wrap -mx-1 lg:-mx-5 ">
+  <div class="partners-container bg-opacity-95">
+    <div class="container mx-auto px-7">
+      <div class="flex flex-wrap -mx-5 ">
         <template v-for="(partner) in $store.state.partners" :key="partner.name">
           <CardCollapsed
             v-if="expandedPartner == ''"
