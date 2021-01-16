@@ -91,7 +91,6 @@
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiAccount } from "@mdi/js";
 import CardCollapsed from "./CardCollapsed.vue";
-import CardExpanded from "./CardExpanded.vue";
 import easyScroll from 'easy-scroll';
 import axios from 'axios';
 
@@ -114,8 +113,7 @@ const sort = a => a.sort((a, b) => a > b ? -1 : 1);
 export default {
   components: {
     SvgIcon,
-    CardCollapsed,
-    CardExpanded
+    CardCollapsed
   },
   data() {
     return {
