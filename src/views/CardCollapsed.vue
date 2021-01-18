@@ -1,10 +1,10 @@
 <template>
     <div class="w-full my-4 px-4 column h-full">
         <!-- Article -->
-        <article class="grid-item bg-gray-50 rounded-xl text-black relative flex flex-nowrap flex-col h-80 overflow-hidden shadow-2xl hover:shadow-lg">
+        <article class="grid-item bg-white rounded-xl text-black relative flex flex-nowrap flex-col h-80 overflow-hidden shadow-2xl hover:shadow-lg">
             <img alt="Placeholder" class="cover-image absolute lg:relative" :src="partner.imageUrl" />
             
-            <header class="flex flex-col leading-tight py-10 px-2 z-10 bg-white bg-opacity-50">
+            <header class="flex flex-col leading-tight pt-10 px-2 z-10">
                 <h1 class="text-gray text-4xl font-extrabold text-center">
                     {{ partner.name }}
                 </h1>
@@ -23,6 +23,14 @@
                 Mehr erfahren >
                 </span>
             </div> -->
+            
+            <div class="absolute bottom-0 text-md hover:text-2xl rounded-tr-lg bg-red-800 text-white pt-1 pb-1 pl-1 pr-1" v-if="partner.tags">
+            <span class="mdi mdi-tag pl-1 pr-1"></span>
+            <span class="pr-1 text-white pl-0.5 z-30" v-for="(tag, index) in partner.tags ?? []" :key="index">
+                {{ tag }}<template v-if="partner.tags?.length - 1 !== index">,</template>
+                </span>
+            </div>
+            
         </article>
         <!-- END Article -->
     </div>

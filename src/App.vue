@@ -1,5 +1,6 @@
 <template>
-  <main>
+  <main class="main-content">
+    <!-- static header -->
     <header class="bg-black site-header">      
       <div class="max-w-7xl lg:mx-10 pt-3">        
         <h1 class="text-2xl lg:text-3xl font-bold font-sans leading-tight text-gray-100 title text-center lg:text-left">
@@ -7,17 +8,27 @@
           <span class = "hidden lg:inline">
           <a class="underline-dotted" href="https://smart-commercial-building.de/">CSCB</a> /
           </span>
-          <router-link to="/">Smart Building Platform</router-link>
+          <router-link class="underline" :to="{ name: 'partners' }">Smart Building Platform</router-link>
         </h1>
       </div>
       <div class="w-full">
         <h1 class="py-2 text-2xl lg:text-5xl text-white font-bold font-sans text-center main-title bg-black">
-          Unternehmen & Produkte
+          Integrierte Unternehmen & Produkte
         </h1>
       </div>
     </header>
 
-    <router-view class="router py-40" />
+    <!-- dynamic content -->
+    <router-view class="router pt-32 pb-10" />
+
+    <!-- privacy & contact -->
+    <div class="text-md pl-10 absolute bottom-4">
+      <span class="bg-white pt-2 px-5 pb-2">
+      <a href="https://smart-commercial-building.de/datenschutzerklaerung/">Datenschutzerklärung</a>
+      <span> - </span>
+      <a href="https://smart-commercial-building.de/impressum/">Impressum</a>
+      </span>
+    </div>
   </main>
 </template>
 
@@ -38,7 +49,12 @@ export default {
 }
 
 #app {
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+.main-content {
+  position: relative;
+  min-height: 100vh;
 }
 
 body {
