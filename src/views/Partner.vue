@@ -17,27 +17,32 @@
           <div class="h-full" v-if="partner.coverImageUrl">
             <img :src="partner.coverImageUrl"/>
           </div>
-          <div class="bg-gray-800 text-gray-100 pt-5">
-          <h1 class="text-4xl pl-6 py-2 font-extrabold" v-if="partner.liveData">
-              Live-Daten aus Aachen<div class="livenow inline-block ml-2">
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </h1>
-            <div class="p-6">
-              <div class="table-auto">
-                <tbody>
-                  <tr v-for="(state, key) in liveState" :key="key">
-                    <td class="mdi text-xl" :class="state.icon"></td>
-                    <td class="text-xl px-3 ">{{ state.value }} {{ state.unit }}</td>                  
-                    <td class="font-semibold text-xl">{{ state.label }} </td>
-                  </tr>
-                </tbody>
+          <div v-if="partner.liveData">
+            <div class="bg-gray-800 text-gray-100 pt-5">
+              <h1 class="text-4xl pl-6 py-2 font-extrabold" >
+                Live-Daten aus Aachen<div class="livenow inline-block ml-2">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </h1>
+              <div class="p-6">
+                <div class="table-auto">
+                  <tbody>
+                    <tr v-for="(state, key) in liveState" :key="key">
+                      <td class="mdi text-xl" :class="state.icon"></td>
+                      <td class="text-xl px-3 ">{{ state.value }} {{ state.unit }}</td>                  
+                      <td class="font-semibold text-xl">{{ state.label }} </td>
+                    </tr>
+                  </tbody>
+                </div>
               </div>
             </div>
+            <div class="float-right w-1/2 transition-colors bg-blue-700 hover:bg-blue-600 cursor-pointer text-2xl p-4 text-center bg-gray-800 text-gray-100">
+              Weitere Daten einsehen >
+            </div>
           </div>
-          <h1 class="text-4xl pl-6 py-3 font-extrabold mt-5 full bg-gray-800 text-white" v-if="partner.moreImages">
+          <h1 class="text-4xl pl-6 py-3 font-extrabold full bg-gray-800 text-white" v-if="partner.moreImages">
             Impressionen
           </h1>
           <div class="full ml-5 px-6" v-for="(image, index) in partner.moreImages" :key="index"> 
@@ -55,8 +60,8 @@
                 <h1 class="text-center font-bold text-3xl">{{ product.name }}</h1>    
                 <img class="object-contain max-h-32 px-5 py-5" :src="product.imageUrl" />
                 <div class="font-light px-3 pt-5 pb-8 text-justify">{{ product.description }}</div>
-                <div v-if="product.moreInfoUrl" class="text-center w-full bg-red-800 text-white text-2xl font-sans font-bold absolute bottom-0">
-                  <span class="mdi mdi-cursor-default-click"></span> <a :href="product.moreInfoUrl" class="font-mono">Mehr Informationen
+                <div v-if="product.moreInfoUrl" class="text-center w-full transition-colors bg-blue-700 hover:bg-blue-600 text-white text-2xl font-sans font-bold absolute bottom-0">
+                  <a :href="product.moreInfoUrl" class="font-mono">Mehr Informationen <span class="mdi mdi-arrow-right-box"></span> 
                   </a>
                 </div>
               </div>
