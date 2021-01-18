@@ -3,7 +3,7 @@ const sort = a => a.sort((a, b) => a.name < b.name ? -1 : 1);
 const shuffle = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
+        [a[i], a[j]] = [a[j], a[i]] ;
     }
     return a;
 }
@@ -11,7 +11,7 @@ const shuffle = (a) => {
 export default {
     state() {
         return {
-            partners: sort([
+            partners: shuffle([
                 {
                   name: "Aedifion",
                   subtitle: "Die Zukunft der Gebäudeautomation", 
