@@ -35,6 +35,16 @@ export default {
                     description: "Das Add-on zur Cloud-Plattform aedifion.analytics ermöglicht die cloudbasierte Betriebsoptimierung mit Hilfe von künstlicher Intelligenz. Das Tool ist der Performance Coach im Gebäude, der Optimierungsempfehlungen auf Grundlage der erhobenen Daten entwickelt und so die Betriebsmannschaft entlastet und unterstützt.",
                     imageUrl: "https://docs.aedifion.io/products/io/images/edge-device.png"
                   }],
+                  links: [{
+                    label: "Dokumentation",
+                    url: "https://docs.aedifion.io/"
+                  }, {
+                    label: "LinkedIn",
+                    url: "https://www.linkedin.com/company/aedifion/"
+                  }, {
+                    label: "Medium",
+                    url: "https://medium.com/@aedifion"
+                  }],
                   tags: ["Cloud Plattform", "Gebäudeoptimierung"]
                 },
                 {
