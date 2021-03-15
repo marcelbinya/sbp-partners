@@ -1,5 +1,5 @@
-import Partners from './views/Partners.vue';
 import Partner from './views/Partner.vue';
+import Partners from './views/Partners.vue';
 
 export let routes = [
   {
