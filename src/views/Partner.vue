@@ -96,7 +96,7 @@
                       <p>{{ partner.contact ? partner.contact.position : '' }}</p>
                   </div>
                   <div class="text-gray-100 text-lg font-semibold">
-                      <a class="text-sm" :href="`mailto:${ partner.contact ? partner.contact.email : '' }`"><span class="text-2xl mdi mdi-email-send"></span> <span class="underline">{{ partner.contact ? partner.contact.email : '' }}</span></a>
+                      <a class="text-lg" :href="`mailto:${ partner.contact ? partner.contact.email : '' }`"><span class="mdi mdi-email-send"></span> <span class="underline">{{ partner.contact ? partner.contact.email : '' }}</span></a>
                   </div>                  
               </div>
             </span>
@@ -105,9 +105,9 @@
             <h1 class="text-4xl font-extrabold ">
               Links
             </h1>
-            <div class="mt-6 flex pl-4">
-              <div v-for="(link, index) in partner.links" :key="index" class="text-2xl">
-                <span class="mdi mdi-web"></span> <a class="underline" :href="link.url">{{ link.label }}</a>
+            <div class="mt-1 flex flex-col pl-4">
+              <div v-for="(link, index) in partner.links" :key="index" class="text-xl">
+                <span class="mdi" :class="link.icon"></span> <a class="font-mono underline font-bold" :href="link.url">{{ link.label }}</a>
               </div>
             </div>
           </div>
@@ -139,6 +139,8 @@ const shuffle = (a) => {
 }
 
 const sort = a => a.sort((a, b) => a > b ? -1 : 1);
+
+const static_token = "T5mFXB4glB8PPm2RE2CtP1UA2hrcdREZjQoXo/+FRaR0zuRNdN8ha5Aq0HpYCvnW";
 
 export default {
   components: {
@@ -175,7 +177,11 @@ export default {
   },
   methods: {
     async refreshLiveData() {
-        let response = (await axios.get(this.partner.liveData.url)).data;
+        let response = (await axios.get(this.partner.liveData.url, {
+          headers: {
+            Authorization: `Bearer ${static_token}`
+          }
+        })).data;
         console.log(response.result)
         if(response.result !== "success") return;
 

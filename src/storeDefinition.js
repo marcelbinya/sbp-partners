@@ -17,7 +17,7 @@ export default {
                   subtitle: "Die Zukunft der Gebäudeautomation",
                   categories: ["Gebäudeautomation", "Softwareplattform"],
                   contact: {
-                    email: "info@aedifion.com"
+                    email: "sales@aedifion.com"
                   },
                   description:
                     "Gebäude sind komplexe Ökosysteme mit viel Potenzial für mehr Effizienz und Nachhaltigkeit. Daran setzt aedifion als Unternehmen an und möchten mit seiner Cloud-Plattform dazu beitragen, dass Immobilien digitaler, nachhaltiger und transparenter werden. Deshalb vernetzt aedifion sämtliche Gewerke im Bestand und im Neubau, um Gebäude einfacher zu betreiben, datenbasiert zu optimieren und fortschrittlich zu regeln. Das Team arbeitet dafür mit modernsten Technologien, wie etwa künstlicher Intelligenz, und bündelt Expertise in den Bereichen IT und Ingenieurswissenschaften. Dadurch werden Wertsteigerung, Kostenreduktion und Zukunftsfähigkeit für Gebäude möglich. Für einen optimierten Gebäudebetrieb braucht man zunächst eine lückenlose und umfassende Datenverfügbarkeit. Das schafft aedifion Plug-and-Play durch die unkomplizierte installation eines Edge Device im Gebäude, der sämtliche technische Gebäudeausrüstung vernetzt und die jeweiligen Daten auf der Cloud-Plattform verfügbar macht. Dieser Data Lake ist die Grundlage für umfassende Betriebsoptimierung. Mit Hilfe von künstlicher Intelligenz werden die Daten strukturiert und ausgewertet. Das Betreiberteam erhält dadurch datenbasierte Handlungsempfehlungen für eine effiziente Optimierung. Durch das Add-on aedifion.controls können außerdem eigene Regelalgorithmen eingespielt und so ein effizienter Dauerbetrieb gewährleistet werden.  Durch diese cloudbasierte Art der Vernetzung werden Immobilien zum echten Smart Building.",
@@ -37,13 +37,16 @@ export default {
                   }],
                   links: [{
                     label: "Dokumentation",
-                    url: "https://docs.aedifion.io/"
+                    url: "https://docs.aedifion.io/",
+                    icon: "mdi-api"
                   }, {
                     label: "LinkedIn",
-                    url: "https://www.linkedin.com/company/aedifion/"
+                    url: "https://www.linkedin.com/company/aedifion/",
+                    icon: "mdi-linkedin"
                   }, {
                     label: "Medium",
-                    url: "https://medium.com/@aedifion"
+                    url: "https://medium.com/@aedifion",
+                    icon: "mdi-web"
                   }],
                   tags: ["Cloud Plattform", "Gebäudeoptimierung"]
                 },
