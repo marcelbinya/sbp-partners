@@ -140,7 +140,7 @@ const shuffle = (a) => {
 
 const sort = a => a.sort((a, b) => a > b ? -1 : 1);
 
-const static_token = "T5mFXB4glB8PPm2RE2CtP1UA2hrcdREZjQoXo/+FRaR0zuRNdN8ha5Aq0HpYCvnW";
+const public_token = "T5mFXB4glB8PPm2RE2CtP1UA2hrcdREZjQoXo/+FRaR0zuRNdN8ha5Aq0HpYCvnW";
 
 export default {
   components: {
@@ -179,7 +179,7 @@ export default {
     async refreshLiveData() {
         let response = (await axios.get(this.partner.liveData.url, {
           headers: {
-            Authorization: `Bearer ${static_token}`
+            Authorization: `Bearer ${public_token}`
           }
         })).data;
         console.log(response.result)
