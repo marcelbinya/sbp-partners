@@ -65,7 +65,7 @@ export default {
           tags: ["Cloud Plattform", "Gebäudeoptimierung"],
           liveData: [
             {
-              thingId: 12900,
+              thingId: 12944,
               mapping: {
                 value: {
                   to: "airQuality",
@@ -76,7 +76,7 @@ export default {
                 },
               },
             }, {
-              thingId: 12906,
+              thingId: 12950,
               mapping: {
                 value: {
                   to: "brightness",
@@ -87,7 +87,7 @@ export default {
                 },
               },
             }, {
-              thingId: 12905,
+              thingId: 12957,
               mapping: {
                 value: {
                   to: "temperature",
@@ -98,7 +98,7 @@ export default {
                 },
               },
             }, {
-              thingId: 12904,
+              thingId: 12948,
               mapping: {
                 value: {
                   to: "humidity",
@@ -109,7 +109,7 @@ export default {
                 },
               },
             }, {
-              thingId: 12902,
+              thingId: 12946,
               mapping: {
                 value: {
                   to: "co2",
@@ -117,6 +117,17 @@ export default {
                   label: "co2",
                   convert: value => Math.floor(value*10)/10,
                   icon: "mdi-molecule-co2",
+                },
+              },
+            }, {
+              thingId: 12958,
+              mapping: {
+                value: {
+                  to: "valve",
+                  unit: "%",
+                  label: "Ventilstellung",
+                  convert: value => Math.floor(value*10)/10,
+                  icon: "mdi-valve",
                 },
               },
             },
