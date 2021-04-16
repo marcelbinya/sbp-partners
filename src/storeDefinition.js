@@ -69,7 +69,7 @@ export default {
               mapping: {
                 value: {
                   to: "airQuality",
-                  unit: "",
+                  unit: "ppm CO2",
                   label: "Luftqualität",
                   convert: value => Math.floor(value*10)/10,
                   icon: "mdi-air-filter",
@@ -106,17 +106,6 @@ export default {
                   label: "Feuchte 1",
                   convert: value => Math.floor(value*10)/10,
                   icon: "mdi-air-humidifier",
-                },
-              },
-            }, {
-              thingId: 12946,
-              mapping: {
-                value: {
-                  to: "co2",
-                  unit: "ppm",
-                  label: "co2",
-                  convert: value => Math.floor(value*10)/10,
-                  icon: "mdi-molecule-co2",
                 },
               },
             }, {
