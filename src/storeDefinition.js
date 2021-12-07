@@ -299,7 +299,7 @@ export default {
         },
         {
           name: "thing-it",
-          subtitle: "",
+          subtitle: "BRAIN AND SOUL FOR YOUR BUILDINGS",
           imageUrl:
             "https://myopus.eu/media/image/41/90/c7/Vorschau_Thing-IT_Video.jpg",
           contact: {
