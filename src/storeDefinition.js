@@ -143,6 +143,16 @@ export default {
           tags: ["Aufzüge"],
         },
         {
+          name: "Schulte-Schlagbaum",
+          subtitle: "NEXT LEVEL ACCESS SINCE 1833",
+          imageUrl:
+            "https://www.sag-schlagbaum.com/data/images/sot-hero1.jpg",
+          contact: {
+            email: "info@example.com",
+          },
+          tags: ["Zutrittssysteme"],
+        },
+        {
           name: "formitas",
           subtitle: "Wir digitalisieren die Bauwelt",
           tags: ["BIM", "AR"],
@@ -152,16 +162,16 @@ export default {
           imageUrl:
             "https://www.schau-ins-rheinland.de/wp-content/uploads/2019/07/formitas-1.jpg",
         },
-        {
-          name: "Compleo",
-          subtitle: "plug in the future.",
-          contact: {
-            email: "info@example.com",
-          },
-          imageUrl:
-            "https://www.electrive.net/wp-content/uploads/2019/10/compleo-neue-ladestation-charging-station.png",
-          tags: ["E-Mobility"],
-        },
+//         {
+//           name: "Compleo",
+//           subtitle: "plug in the future.",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           imageUrl:
+//             "https://www.electrive.net/wp-content/uploads/2019/10/compleo-neue-ladestation-charging-station.png",
+//           tags: ["E-Mobility"],
+//         },
         {
           name: "Zumtobel",
           subtitle: "Innovative Lichtlösungen",
