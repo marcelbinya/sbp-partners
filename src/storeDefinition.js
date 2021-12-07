@@ -133,6 +133,16 @@ export default {
           tags: ["Licht", "Bewegung"],
         },
         {
+          name: "Schindler",
+          subtitle: "We Elevate",
+          imageUrl:
+            "https://www.schindler.de/content/dam/website/global/homepage-hero/buildings/schindler-omnitower-frankfurt.jpg/_jcr_content/renditions/original.image_file.1920.1080.file/schindler-omnitower-frankfurt.jpg",
+          contact: {
+            email: "info@example.com",
+          },
+          tags: ["Aufzüge"],
+        },
+        {
           name: "formitas",
           subtitle: "Wir digitalisieren die Bauwelt",
           tags: ["BIM", "AR"],
