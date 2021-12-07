@@ -168,25 +168,25 @@ export default {
         //   categories: ["Projektentwicklung"],
         //   imageUrl: "assets/img/csm_Moringa_HafenCity_vorne_bae70fe086.jpg",
         // },
-        {
-          name: "Mennekes",
-          imageUrl:
-            "https://www.chargeupyourday.de/fileadmin/_processed_/7/2/csm_content_installateur_dienstwagen_600x400_75a9955576.jpg",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["E-Mobility", "Ladesäulen"],
-        },
-        {
-          name: "MOON Power",
-          subtitle: "Elektromobilität Alltag werden lassen",
-          imageUrl:
-            "https://autoundwirtschaft.at/NewsImages-870x580/pic31830_1-mooncity-in-der-sterneckstrasse.png",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["E-Mobility", "Ladesäulen"],
-        },
+//         {
+//           name: "Mennekes",
+//           imageUrl:
+//             "https://www.chargeupyourday.de/fileadmin/_processed_/7/2/csm_content_installateur_dienstwagen_600x400_75a9955576.jpg",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           tags: ["E-Mobility", "Ladesäulen"],
+//         },
+//         {
+//           name: "MOON Power",
+//           subtitle: "Elektromobilität Alltag werden lassen",
+//           imageUrl:
+//             "https://autoundwirtschaft.at/NewsImages-870x580/pic31830_1-mooncity-in-der-sterneckstrasse.png",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           tags: ["E-Mobility", "Ladesäulen"],
+//         },
         {
           name: "Phoenix Contact",
           subtitle: "Lösungen in der Elektrotechnik & Automation",
@@ -211,16 +211,16 @@ export default {
             "https://americantower.com.de//Assets/beta.americantower.com/uploads/images/heroes/us-tower.jpg",
           tags: ["Konnektivität"],
         },
-        {
-          name: "Essentry",
-          subtitle: "Automatisierte Zugangsverwaltung für Gebäude",
-          imageUrl:
-            "https://pyramid.de/wp-content/uploads/2020/05/Essentry001_web.jpg",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["Cloud Plattform", "Zutrittskontrolle"],
-        },
+//         {
+//           name: "Essentry",
+//           subtitle: "Automatisierte Zugangsverwaltung für Gebäude",
+//           imageUrl:
+//             "https://pyramid.de/wp-content/uploads/2020/05/Essentry001_web.jpg",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           tags: ["Cloud Plattform", "Zutrittskontrolle"],
+//         },
         {
           name: "LUCEM Lichtbeton",
           subtitle: "Einzigartiges Lichtdesign",
@@ -233,17 +233,17 @@ export default {
           },
           tags: ["Licht"],
         },
-        {
-          name: "Schneider Electric",
-          subtitle: "Digitale Energie- und Automatisierungslösungen",
-          categories: ["Leuchten", "Umweltsensorik"],
-          imageUrl:
-            "https://www.se.com/de/de/assets/521/media/158817/1200/SE_Banner_Blog_Barbara_Frei_IC-2400x706.jpg",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["Elektronik"],
-        },
+//         {
+//           name: "Schneider Electric",
+//           subtitle: "Digitale Energie- und Automatisierungslösungen",
+//           categories: ["Leuchten", "Umweltsensorik"],
+//           imageUrl:
+//             "https://www.se.com/de/de/assets/521/media/158817/1200/SE_Banner_Blog_Barbara_Frei_IC-2400x706.jpg",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           tags: ["Elektronik"],
+//         },
         {
           name: "Signify",
           subtitle: "The meaning of light",
@@ -278,10 +278,10 @@ export default {
           tags: ["Parkplatzsensorik"],
         },
         {
-          name: "Thing-it",
+          name: "thing-it",
           subtitle: "",
           imageUrl:
-            "https://www.homeandsmart.de/var/site/storage/images/_aliases/fixed_col_12/1/2/7/2/272721-1-ger-DE/thing-it-cloud-plattform-mit-app.jpg",
+            "https://myopus.eu/media/image/41/90/c7/Vorschau_Thing-IT_Video.jpg",
           contact: {
             email: "info@example.com",
           },
