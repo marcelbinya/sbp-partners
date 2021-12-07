@@ -227,7 +227,7 @@ export default {
           categories: ["Gebäudeautomation", "Softwareplattform"],
           description: "---",
           imageUrl:
-            "https://lucem.com/de/wp-content/uploads/sites/3/revslider/slider-2/Babor.jpeg",
+            "https://www.beton.org/fileadmin/beton-org/media/Inspiration/Material/610x340/fassade_lichtbeton_01_610x340.jpg",
           contact: {
             email: "info@example.com",
           },
