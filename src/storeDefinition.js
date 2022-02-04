@@ -123,16 +123,6 @@ export default {
           ],
         },
         {
-          name: "Enlighted",
-          subtitle: "Beyond Smart Buildings. Brilliant Buildings",
-          imageUrl:
-            "https://www.enlightedinc.com/wp-content/uploads/2016/06/iot-applications-space-info3.jpg",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["Licht", "Bewegung"],
-        },
-        {
           name: "Schindler",
           subtitle: "We Elevate",
           imageUrl:
@@ -162,16 +152,6 @@ export default {
           imageUrl:
             "https://www.schau-ins-rheinland.de/wp-content/uploads/2019/07/formitas-1.jpg",
         },
-//         {
-//           name: "Compleo",
-//           subtitle: "plug in the future.",
-//           contact: {
-//             email: "info@example.com",
-//           },
-//           imageUrl:
-//             "https://www.electrive.net/wp-content/uploads/2019/10/compleo-neue-ladestation-charging-station.png",
-//           tags: ["E-Mobility"],
-//         },
         {
           name: "Zumtobel",
           subtitle: "Innovative Lichtlösungen",
@@ -242,6 +222,18 @@ export default {
 //           tags: ["Cloud Plattform", "Zutrittskontrolle"],
 //         },
         {
+          name: "pinestack",
+          subtitle: "Die Plattform für effizientes Property Management",
+          categories: ["Softwareplattform", "App"],
+          description: "---",
+          imageUrl:
+            "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://pinestack.io/wp-content/uploads/2019/02/ps_hero_image.png",
+          contact: {
+            email: "info@example.com",
+          },
+          tags: ["Softwareplattform", "App"],
+        },
+        {
           name: "LUCEM Lichtbeton",
           subtitle: "Einzigartiges Lichtdesign",
           categories: ["Gebäudeautomation", "Softwareplattform"],
@@ -264,17 +256,17 @@ export default {
 //           },
 //           tags: ["Elektronik"],
 //         },
-        {
-          name: "Signify",
-          subtitle: "The meaning of light",
-          categories: ["Leuchten", "Umweltsensorik"],
-          imageUrl:
-            "https://www.signify.com/b-dam/signify/de-de/about/news/2020/20201218-the-new-uv-c-table-lamp-from-philips/philips-uv-c-b2c-livingroom.jpg",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["Plattform", "Licht"],
-        },
+//         {
+//           name: "Signify",
+//           subtitle: "The meaning of light",
+//           categories: ["Leuchten", "Umweltsensorik"],
+//           imageUrl:
+//             "https://www.signify.com/b-dam/signify/de-de/about/news/2020/20201218-the-new-uv-c-table-lamp-from-philips/philips-uv-c-b2c-livingroom.jpg",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           tags: ["Plattform", "Licht"],
+//         },
         {
           name: "S O NAH",
           subtitle: "Drive home, not circles",
@@ -297,16 +289,16 @@ export default {
           ],
           tags: ["Parkplatzsensorik"],
         },
-        {
-          name: "thing-it",
-          subtitle: "BRAIN AND SOUL FOR YOUR BUILDINGS",
-          imageUrl:
-            "https://myopus.eu/media/image/41/90/c7/Vorschau_Thing-IT_Video.jpg",
-          contact: {
-            email: "info@example.com",
-          },
-          tags: ["Cloud Plattform", "App"],
-        },
+//         {
+//           name: "thing-it",
+//           subtitle: "BRAIN AND SOUL FOR YOUR BUILDINGS",
+//           imageUrl:
+//             "https://myopus.eu/media/image/41/90/c7/Vorschau_Thing-IT_Video.jpg",
+//           contact: {
+//             email: "info@example.com",
+//           },
+//           tags: ["Cloud Plattform", "App"],
+//         },
         {
           name: "wtec",
           categories: ["Leuchten"],
