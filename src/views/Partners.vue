@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="w-full border-white border-t-4">
-      <h1 class="py-2 text-2xl lg:text-5xl text-white font-bold font-sans text-center main-title bg-gradient-to-tr to-gray-800 from-gray-700">
+      <h1 class="py-2 mt-8 text-2xl lg:text-5xl text-white font-bold font-sans text-center main-title bg-gradient-to-tr to-gray-800 from-gray-700">
         Integrierte Unternehmen & Produkte 
       </h1>
     </div>
-    <div class="partners-container bg-opacity-95">
+    <div class="mt-14 partners-container bg-opacity-95">
       <div class="container mx-auto px-7">
         <!-- <div class="bg-white">
         <span class="text-3xl">

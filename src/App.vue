@@ -1,7 +1,7 @@
 <template>
   <main class="main-content">
     <!-- static header -->
-    <header class="bg-gradient-to-r from-gray-800 to-gray-600 site-header h-16">      
+    <header class="bg-gradient-to-r from-blue-900 to-blue-800 site-header h-16">      
       <div class="max-w-7xl lg:mx-10 py-3">        
         <h1 class="text-3xl font-bold font-sans leading-tight text-gray-100 title text-center lg:text-left">
           <img src="/assets/img/center_weiss.png" class="logo hidden lg:inline"/>

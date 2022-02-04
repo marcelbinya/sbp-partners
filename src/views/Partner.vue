@@ -6,10 +6,10 @@
           class="bg-gray-50 text-gray text-black relative partner-grid grid grid-cols-1 lg:grid-cols-2 shadow-md rounded-b-2xl overflow-hidden"
         >
           <header class="flex flex-col leading-tight px-6 pb-4">
-            <h1 class="text-7xl font-extrabold">
+            <h1 class="font-mono text-7xl font-extrabold">
               {{ partner.name }}
             </h1>
-            <h2 class="font-extrabold text-3xl color-green font-sans">
+            <h2 class="font-mono pb-8 font-extrabold text-3xl color-green font-sans">
               {{ partner.subtitle }}
             </h2>
             <div class="text-xl font-light">
@@ -42,11 +42,11 @@
                   </tbody>
                 </div>
               </div>
-            </div>
-            <div
-              class="float-right w-1/2 transition-colors bg-blue-700 hover:bg-blue-600 cursor-pointer text-2xl p-4 text-center bg-gray-800 text-gray-100"
-            >
-              Weitere Daten einsehen >
+              <div
+                class="font-mono w-full transition-colors bg-blue-900 hover:bg-blue-600 cursor-pointer text-2xl p-4 text-center bg-gray-800 text-gray-100"
+              >
+                Weitere Daten einsehen >
+              </div>
             </div>
           </div>
           <h1
@@ -66,7 +66,7 @@
             <img class="object-cover mx-auto" :src="image.url" />
           </div>
           <h1
-            class="text-4xl pl-6 py-3 font-extrabold mt-5 full bg-gray-800 text-white"
+            class="text-4xl font-mono pl-6 py-3 font-extrabold mt-5 full bg-blue-800 text-white"
           >
             Verbaute Produkte
           </h1>
@@ -263,8 +263,7 @@ export default {
           if ("convert" in mapping[property])
             value = mapping[property].convert(value);
           let mapTo = property;
-          if("to" in mapping[property])
-            mapTo = mapping[property].to;
+          if ("to" in mapping[property]) mapTo = mapping[property].to;
           this.liveState[mapTo] = {
             value,
             ...mapping[property],
