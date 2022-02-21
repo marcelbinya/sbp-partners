@@ -1,20 +1,25 @@
-import Partner from './views/Partner.vue';
-import Partners from './views/Partners.vue';
+import Partner from "./views/Partner.vue";
+import Partners from "./views/Partners.vue";
 
 export let routes = [
   {
-    name: 'home',
-    path: '/',
+    name: "home",
+    path: "/",
     component: Partners,
   },
   {
-    name: 'partners',
-    path: '/partners',
+    name: "partners",
+    path: "/partners",
     component: Partners,
   },
   {
-    name: 'partner',
+    name: "partner",
     component: Partner,
-    path: '/partners/:name',
-  }
-]
+    path: "/partners/:name",
+  },
+  {
+    name: "dashboard",
+    component: Partner,
+    path: "/dashboard",
+  },
+];

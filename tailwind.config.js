@@ -1,7 +1,7 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -9,8 +9,8 @@ module.exports = {
         sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
       },
       boxShadow: {
-        blue: '0 4px 14px 0 rgba(19, 51, 69, 0.69)',
-        white: '0 4px 14px 0 rgba(255, 255, 255, 0.69)',
+        blue: "0 4px 14px 0 rgba(19, 51, 69, 0.69)",
+        white: "0 4px 14px 0 rgba(255, 255, 255, 0.69)",
       },
     },
   },
@@ -19,4 +19,4 @@ module.exports = {
     // require('@tailwindcss/typography'),
     // require('@tailwindcss/aspect-ratio'),
   ],
-}
+};
