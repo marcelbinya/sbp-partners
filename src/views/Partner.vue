@@ -3,13 +3,32 @@
     <div class="container lg:mx-auto">
       <div class="w-full my-4 column h-full">
         <article
-          class="bg-gray-50 text-gray text-black relative partner-grid grid grid-cols-1 lg:grid-cols-2 shadow-md rounded-b-2xl overflow-hidden"
+          class="
+            bg-gray-50
+            text-gray text-black
+            relative
+            partner-grid
+            grid grid-cols-1
+            lg:grid-cols-2
+            shadow-md
+            rounded-b-2xl
+            overflow-hidden
+          "
         >
           <header class="flex flex-col leading-tight px-6 pb-4">
             <h1 class="font-mono text-7xl font-extrabold">
               {{ partner.name }}
             </h1>
-            <h2 class="font-mono pb-8 font-extrabold text-3xl color-green font-sans">
+            <h2
+              class="
+                font-mono
+                pb-8
+                font-extrabold
+                text-3xl
+                color-green
+                font-sans
+              "
+            >
               {{ partner.subtitle }}
             </h2>
             <div class="text-xl font-light">
@@ -43,14 +62,34 @@
                 </div>
               </div>
               <div
-                class="font-mono w-full transition-colors bg-blue-900 hover:bg-blue-600 cursor-pointer text-2xl p-4 text-center bg-gray-800 text-gray-100"
+                class="
+                  font-mono
+                  w-full
+                  transition-colors
+                  bg-blue-900
+                  hover:bg-blue-600
+                  cursor-pointer
+                  text-2xl
+                  p-4
+                  text-center
+                  bg-gray-800
+                  text-gray-100
+                "
               >
                 Weitere Daten einsehen >
               </div>
             </div>
           </div>
           <h1
-            class="text-4xl pl-6 py-3 font-extrabold full bg-gray-800 text-white"
+            class="
+              text-4xl
+              pl-6
+              py-3
+              font-extrabold
+              full
+              bg-gray-800
+              text-white
+            "
             v-if="partner.moreImages"
           >
             Impressionen
@@ -66,7 +105,17 @@
             <img class="object-cover mx-auto" :src="image.url" />
           </div>
           <h1
-            class="text-4xl font-mono pl-6 py-3 font-extrabold mt-5 full bg-blue-800 text-white"
+            class="
+              text-4xl
+              font-mono
+              pl-6
+              py-3
+              font-extrabold
+              mt-5
+              full
+              bg-blue-800
+              text-white
+            "
           >
             Verbaute Produkte
           </h1>
@@ -77,7 +126,18 @@
               id="products"
             >
               <div
-                class="relative pb-5 bg-gray-100 shadow-inner shadow-xl flex flex-col overflow-hidden pt-2 justify-start align-top w-96"
+                class="
+                  relative
+                  pb-5
+                  bg-gray-100
+                  shadow-inner shadow-xl
+                  flex flex-col
+                  overflow-hidden
+                  pt-2
+                  justify-start
+                  align-top
+                  w-96
+                "
                 v-for="(product, index) in partner.products"
                 :key="index"
               >
@@ -93,7 +153,17 @@
                 </div>
                 <div
                   v-if="product.moreInfoUrl"
-                  class="text-center w-full transition-colors bg-blue-700 hover:bg-blue-600 text-white text-2xl font-sans font-bold absolute bottom-0"
+                  class="
+                    text-center
+                    w-full
+                    transition-colors
+                    bg-blue-700
+                    hover:bg-blue-600
+                    text-white text-2xl
+                    font-sans font-bold
+                    absolute
+                    bottom-0
+                  "
                 >
                   <a :href="product.moreInfoUrl" class="font-mono"
                     >Mehr Informationen
@@ -134,7 +204,15 @@
             <span class="mt-6 flex flex-row">
               <div class="pl-6 photo-wrapper text-white" v-if="partner.contact">
                 <img
-                  class="w-32 h-32 border-white bg-white rounded-full object-cover border-2"
+                  class="
+                    w-32
+                    h-32
+                    border-white
+                    bg-white
+                    rounded-full
+                    object-cover
+                    border-2
+                  "
                   :src="
                     partner.contact
                       ? partner.contact.imageUrl ?? '/assets/img/phone.jpg'

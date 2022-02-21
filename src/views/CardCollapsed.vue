@@ -89,11 +89,7 @@
               "
             ></button>
             <button
-              @click="
-                $router.push({
-                  name: 'dashboard',
-                })
-              "
+              @click="callToDashboard()"
               type="button"
               class="
                 mdi mdi-eye
@@ -115,9 +111,27 @@
 <script>
 export default {
   props: ["partner"],
-};
-</script>
+  methods: {
+    callToDashboard() {
+      var oReq = new XMLHttpRequest();
 
+      oReq.addEventListener("load", reqListener);
+
+      oReq.open(
+        "POST",
+
+        "https://1src.tech/api/functions/sbp_set-window/run?key=XFKdw42rYH2pLgGZ9WGzzShWD9GfJZra"
+      );
+
+      oReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+      oReq.send(JSON.stringify({ config: this.partner.name }));
+    },
+  },
+};
+function reqListener() {}
+</script>
+ 
 <style>
 @media (min-width: 1024px) {
   .cover-image {
