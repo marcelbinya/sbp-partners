@@ -1,18 +1,64 @@
 <template>
   <main class="main-content">
     <!-- static header -->
-    <header class="bg-gradient-to-r from-blue-900 to-blue-800 site-header h-16">      
-      <div class="max-w-7xl lg:mx-10 py-3">        
-        <h1 class="text-3xl font-bold font-sans leading-tight text-gray-100 title text-center lg:text-left">
-          <img src="/assets/img/center_weiss.png" class="logo hidden lg:inline"/>
-          <span class = "hidden lg:inline">
-          <a class="underline-dotted" href="https://smart-commercial-building.de/">CSCB</a> /
+    <header class="bg-gradient-to-r from-blue-900 to-blue-800 site-header h-16">
+      <div class="max-w-7xl lg:mx-10 py-3">
+        <h1
+          class="
+            text-3xl
+            font-bold font-sans
+            leading-tight
+            text-gray-100
+            title
+            text-center
+            lg:text-left
+          "
+        >
+          <img
+            src="/assets/img/center_weiss.png"
+            class="logo hidden lg:inline"
+          />
+          <span class="hidden lg:inline">
+            <a
+              class="underline-dotted"
+              href="https://smart-commercial-building.de/"
+              >CSCB</a
+            >
+            /
           </span>
-          <router-link class="underline" :to="{ name: 'partners' }">Smart Building Platform</router-link>
-          <template
-            v-if="$router.currentRoute.value.name === 'partner'">
-          / <router-link class="underline" :to="{ name: 'partners' }">Unternehmen</router-link>
+          <router-link class="underline" :to="{ name: 'partners' }"
+            >Smart Building Platform</router-link
+          >
+          <template v-if="$router.currentRoute.value.name === 'partner'">
+            /
+            <router-link class="underline" :to="{ name: 'partners' }"
+              >Unternehmen</router-link
+            >
           </template>
+
+          <button
+            id="show-modal"
+            @click="showModal = true"
+            type="button"
+            class="
+              absolute
+              right-5
+              mdi mdi-monitor-edit
+              px-2.5
+              py-1
+              text-center text-xl text-black-700
+              border
+              rounded-full
+            "
+          ></button>
+          <Teleport to="body">
+            <!-- use the modal component, pass in the prop -->
+            <modal :show="showModal" @close="showModal = false">
+              <template #header>
+                <h3>Change Diplay Options</h3>
+              </template>
+            </modal>
+          </Teleport>
         </h1>
       </div>
     </header>
@@ -23,20 +69,31 @@
     <!-- privacy & contact -->
     <div class="text-md pl-10 absolute bottom-4">
       <span class="bg-white pt-2 px-5 pb-2">
-      <a href="https://smart-commercial-building.de/datenschutzerklaerung/">Datenschutzerklärung</a>
-      <span> - </span>
-      <a href="https://smart-commercial-building.de/impressum/">Impressum</a>
+        <a href="https://smart-commercial-building.de/datenschutzerklaerung/"
+          >Datenschutzerklärung</a
+        >
+        <span> - </span>
+        <a href="https://smart-commercial-building.de/impressum/">Impressum</a>
       </span>
     </div>
   </main>
 </template>
 
 <script>
+import Modal from "./views/Modal.vue";
 export default {
+  components: {
+    Modal,
+  },
   mounted() {
     console.log(this.$router.currentRoute.value.name);
-  }
-}
+  },
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+};
 </script>
 
 <style>
@@ -83,6 +140,6 @@ main {
   /* background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCA0MCw0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDM2MCkgIj48cmVjdCBpZD0icGF0dGVybi1iYWNrZ3JvdW5kIiB3aWR0aD0iNDAwJSIgaGVpZ2h0PSI0MDAlIiBmaWxsPSJyZ2JhKDI0NywgMjUwLCAyNTIsMSkiPjwvcmVjdD4gPHBhdGggZmlsbD0icmdiYSgyNiwgMzIsIDQ0LDEpIiBkPSJNLTEwIC0xMCBoNjAgdjYwIGgtNjB6IE0yMCAyMCB2MCBoMCB2LTAgeiI+PC9wYXRoPjxwYXRoIGZpbGw9InJnYmEoMjQ3LCAyNTAsIDI1MiwxKSIgZD0iTS0xMCAtMTAgaDkwIHY5MCBoLTkweiAKICAgICAgICAgICAgICAgIE0zMCAzMCB2MjAgaDIwIHYtMjAgegogICAgICAgICAgICAgICAgTS0xMCAtMTAgdjIwIGgyMCB2LTIwIHoKICAgICAgICAgICAgICAgIE0zMCAtMTAgdjIwIGgyMCB2LTIwIHoKICAgICAgICAgICAgICAgIE0tMTAgMzAgdjIwIGgyMCB2LTIwIHoiPjwvcGF0aD48L3BhdHRlcm4+ICA8L2RlZnM+IDxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=") */
   /* background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgNDAsNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzNTUpICI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0icmdiYSgyNDcsIDI1MCwgMjUyLDEpIj48L3JlY3Q+IDxjaXJjbGUgZmlsbD0icmdiYSg5OSwgMTc5LCAyMzcsMSkiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48Y2lyY2xlIGZpbGw9InJnYmEoNDMsIDEwOCwgMTc2LDEpIiBjeD0iMzIiIGN5PSIyMCIgcj0iMSI+PC9jaXJjbGU+PGNpcmNsZSBmaWxsPSJyZ2JhKDQzLCAxMDgsIDE3NiwxKSIgY3g9Ii04IiBjeT0iMjAiIHI9IjEiPjwvY2lyY2xlPjwvcGF0dGVybj4gIDwvZGVmcz4gPHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgaGVpZ2h0PSIxMDAlIiB3aWR0aD0iMTAwJSI+PC9yZWN0Pjwvc3ZnPg==") */
   /* background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjM4IiBoZWlnaHQ9IjM4IiB2aWV3Qm94PSIwIDAgNDAsNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg5MCkgIj48cmVjdCBpZD0icGF0dGVybi1iYWNrZ3JvdW5kIiB3aWR0aD0iNDAwJSIgaGVpZ2h0PSI0MDAlIiBmaWxsPSJyZ2JhKDI0NywgMjUwLCAyNTIsMSkiPjwvcmVjdD4gPGNpcmNsZSBmaWxsPSJyZ2JhKDI2LCAzMiwgNDQsMSkiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48Y2lyY2xlIGZpbGw9InJnYmEoOTksIDE3OSwgMjM3LDEpIiBjeD0iMjMiIGN5PSIyMCIgcj0iMSI+PC9jaXJjbGU+PGNpcmNsZSBmaWxsPSJyZ2JhKDk5LCAxNzksIDIzNywxKSIgY3g9Ii0xNyIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48L3BhdHRlcm4+ICA8L2RlZnM+IDxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=") */
-  background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCA0MCw0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDIwNikgIj48cmVjdCBpZD0icGF0dGVybi1iYWNrZ3JvdW5kIiB3aWR0aD0iNDAwJSIgaGVpZ2h0PSI0MDAlIiBmaWxsPSJyZ2JhKDI0NywgMjUwLCAyNTIsMSkiPjwvcmVjdD4gPGNpcmNsZSBmaWxsPSJyZ2JhKDI2LCAzMiwgNDQsMSkiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48Y2lyY2xlIGZpbGw9InJnYmEoOTksIDE3OSwgMjM3LDEpIiBjeD0iNDAiIGN5PSIyMCIgcj0iMSI+PC9jaXJjbGU+PGNpcmNsZSBmaWxsPSJyZ2JhKDk5LCAxNzksIDIzNywxKSIgY3g9IjAiIGN5PSIyMCIgcj0iMSI+PC9jaXJjbGU+PC9wYXR0ZXJuPiAgPC9kZWZzPiA8cmVjdCBmaWxsPSJ1cmwoI3BhdHRlcm4pIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIj48L3JlY3Q+PC9zdmc+")
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCA0MCw0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDIwNikgIj48cmVjdCBpZD0icGF0dGVybi1iYWNrZ3JvdW5kIiB3aWR0aD0iNDAwJSIgaGVpZ2h0PSI0MDAlIiBmaWxsPSJyZ2JhKDI0NywgMjUwLCAyNTIsMSkiPjwvcmVjdD4gPGNpcmNsZSBmaWxsPSJyZ2JhKDI2LCAzMiwgNDQsMSkiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48Y2lyY2xlIGZpbGw9InJnYmEoOTksIDE3OSwgMjM3LDEpIiBjeD0iNDAiIGN5PSIyMCIgcj0iMSI+PC9jaXJjbGU+PGNpcmNsZSBmaWxsPSJyZ2JhKDk5LCAxNzksIDIzNywxKSIgY3g9IjAiIGN5PSIyMCIgcj0iMSI+PC9jaXJjbGU+PC9wYXR0ZXJuPiAgPC9kZWZzPiA8cmVjdCBmaWxsPSJ1cmwoI3BhdHRlcm4pIiBoZWlnaHQ9IjEwMCUiIHdpZHRoPSIxMDAlIj48L3JlY3Q+PC9zdmc+");
 }
 </style>
