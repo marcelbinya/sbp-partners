@@ -28,21 +28,21 @@ export default {
               name: "Edge Device",
               description: `Das Edge Device ist ein kleiner Industrie-PC der Plug-and-Play an die Technische Gebäudeausrüstung angeschlossen wird. Er verbindet sämtliche Sensoren, Aktoren und Steuerungsgeräte mittel der unterstützten Protokolle und ermöglicht die Datenverfügbarkeit auf der Cloud-Plattform.`,
               imageUrl:
-                "https://docs.aedifion.io/products/io/images/edge-device.png",
+                "https://docs.aedifion.io/en/products/edge-device/images/edge-device.png",
             },
             {
               name: "aedifion.io",
               description:
                 "aedifion.io ist die hochspezialisierte Cloud-Plattform für Datenerfassung und Datenbereitstellung im Gebäude. Dadurch werden Monitoring und Optimierung von technischer Gebäudeausrüstung und Energiesystemen möglich. Es ist das digitale Werkzeug, um Betriebskosten zu senken und die Energieeffizienz des Gebäudes zu steigern – für Bestand und Neubau gleichermaßen.",
               imageUrl:
-                "https://docs.aedifion.io/products/io/images/edge-device.png",
+                "https://docs.aedifion.io/en/products/io/images/integrations/dashboard.png",
             },
             {
               name: "aedifion.analytics",
               description:
                 "Das Add-on zur Cloud-Plattform aedifion.analytics ermöglicht die cloudbasierte Betriebsoptimierung mit Hilfe von künstlicher Intelligenz. Das Tool ist der Performance Coach im Gebäude, der Optimierungsempfehlungen auf Grundlage der erhobenen Daten entwickelt und so die Betriebsmannschaft entlastet und unterstützt.",
               imageUrl:
-                "https://docs.aedifion.io/products/io/images/edge-device.png",
+                "https://docs.aedifion.io/en/products/analytics/images/aedifion_analytics-overview.png",
             },
           ],
           links: [
@@ -177,8 +177,7 @@ export default {
             {
               name:"myPORT",
               description: "Mit myPORT können autorisierte App-Nutzer*innen, Ihr Smartphone als Schlüssel zum Gebäude und als Gegensprechanlage verwenden. (Türen entriegeln, manuell aus der Ferne oder bei Annäherung; Aufzugszielruf, bei Annäherung; Videogegensprechen, von Überall; Gästesteuerung, von Überall) ",
-              imageUrl:
-              "",
+              imageUrl: "https://us.schindler.com/content/dam/website/us/images/media/myport-mobile-app-turnstile.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg./cq5dam.web.1280.1280.jpeg",
             },
             {
               name:"CoLab",
@@ -294,7 +293,7 @@ export default {
           tags: ["Elektronik"],
         },
         {
-          name: "American Tower",
+          name: "American Tower", // Fehler,wenn ich "Corporation" hinzufüge 
           subtitle: "Drahtlose Infrastruktur für eine vernetzte Welt",
           description: `Founded in 1995, American Tower Corporation, one of the largest global Real Estate Investment Trusts (REITs), is a leading independent owner, operator and developer of wireless and broadcast communications real estate. Our global portfolio includes approximately 180,000 communications sites, including nearly 41,000 properties in the United States and approximately 139,000 properties internationally. In addition to leasing space on wireless and broadcast towers, we provide customized solutions through our in-building systems, outdoor distributed antenna systems and other right-of-way options, managed rooftops and services that speed network deployment.
                   Headquartered in Boston, Massachusetts, American Tower has offices across the United States and in Argentina, Brazil, Burkina Faso, Chile, Colombia, Costa Rica, France, Germany, Ghana, India, Kenya, Mexico, Niger, Nigeria, Paraguay, Peru, South Africa and Uganda.`,
