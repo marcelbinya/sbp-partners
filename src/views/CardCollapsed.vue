@@ -88,18 +88,29 @@
                 rounded-full
               "
             ></button>
-            <button
-              @click="callToDashboard()"
-              type="button"
-              class="
-                mdi mdi-eye
-                px-2.5
-                py-1
-                text-center text-xl text-black-700
-                border border-black
-                rounded-full
-              "
-            ></button>
+            <Popper v-bind="$attrs" arrow="true">
+              <button
+                @click="callToDashboard()"
+                type="button"
+                class="
+                  mdi mdi-eye
+                  px-2.5
+                  py-1
+                  text-center text-xl text-black-700
+                  border border-black
+                  rounded-full
+                "
+              ></button>
+              <template #content="props">
+                <div class="grid grid-cols-2 gap-2 w-64 h-36 bg-gray-200 border-4 border-white shadow-xl">
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-left')">Oben links</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-right')">Oben rechts</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('bottom-left')">Unten links</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('bottom-right')">Unten rechts</div>
+                </div>
+                <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-left')">Ganzer Bildschirm</div>
+              </template>
+            </Popper>
           </div>
         </div>
       </div>
@@ -112,20 +123,19 @@
 export default {
   props: ["partner"],
   methods: {
-    callToDashboard() {
+    callToDashboard(position) {
       var oReq = new XMLHttpRequest();
 
       oReq.addEventListener("load", reqListener);
 
       oReq.open(
         "POST",
-
         "https://1src.tech/api/functions/sbp_set-window/run?key=XFKdw42rYH2pLgGZ9WGzzShWD9GfJZra"
       );
 
       oReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-      oReq.send(JSON.stringify({ config: this.partner.name }));
+      oReq.send(JSON.stringify({ partner: this.partner.name, position }));
     },
   },
 };
