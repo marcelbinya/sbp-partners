@@ -5,6 +5,7 @@ import { createApp } from "vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 import Vuex from "vuex";
+import Popper from "vue3-popper";
 
 import App from "./App.vue";
 import { routes } from "./routes.js";
@@ -15,6 +16,7 @@ import storeDefinition from "./storeDefinition";
 //
 
 let app = createApp(App);
+app.component("Popper", Popper);
 let router = createRouter({
   history: createWebHistory(),
   routes: import.meta.hot ? [] : routes,

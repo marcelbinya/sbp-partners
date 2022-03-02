@@ -8,25 +8,26 @@
   },
   "dependencies": {
     "@bundled-es-modules/axios": "^0.21.1",
-    "@jamescoyle/vue-icon": "^0.1.0",
-    "@mdi/js": "^5.8.55",
-    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "@jamescoyle/vue-icon": "^0.1.2",
+    "@mdi/js": "^5.9.55",
+    "@tailwindcss/aspect-ratio": "^0.2.2",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.3.1",
     "axios": "^0.26.0",
     "easy-scroll": "^0.7.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "vue": "^3.0.4",
-    "vue-material-design-icons": "^4.11.0",
-    "vue-router": "^4.0.1",
-    "vuex": "^4.0.0-rc.2"
+    "vue": "^3.2.31",
+    "vue-material-design-icons": "^4.13.0",
+    "vue-router": "^4.0.13",
+    "vue3-popper": "^1.4.1",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-    "autoprefixer": "^9.8.6",
+    "@vue/compiler-sfc": "^3.2.31",
+    "autoprefixer": "^9.8.8",
     "cross-env": "^7.0.3",
-    "postcss": "^7.0.35",
-    "sass": "^1.32.0",
+    "postcss": "^7.0.39",
+    "sass": "^1.49.9",
     "vite": "^1.0.0-rc.13"
   }
 }
