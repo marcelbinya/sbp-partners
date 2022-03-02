@@ -90,7 +90,6 @@
             ></button>
             <Popper v-bind="$attrs" arrow="true">
               <button
-                @click="callToDashboard()"
                 type="button"
                 class="
                   mdi mdi-eye
