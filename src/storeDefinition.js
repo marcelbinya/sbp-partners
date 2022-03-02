@@ -130,6 +130,73 @@ export default {
           contact: {
             email: "info@example.com",
           },
+          description: "Der 1874 gegründete Schindler Konzern ist einer der weltweit führenden Anbieter von Aufzügen und Fahrtreppen und damit einhergehenden Dienstleistungen. Seine innovativen und umweltfreundlichen Zutritts- und Beförderungssysteme prägen maßgeblich die Mobilität einer urbanen Gesellschaft. Täglich bewegt Schindler mit seinen Mobilitätslösungen 1,5 Milliarden Menschen auf der ganzen Welt. Hinter diesem Erfolg stehen mehr als 65.000 Mitarbeitende in über 100 Ländern. Schindler Deutschland wurde 1906 als erste Auslandstochter gegründet und ist heute mit mehr als 4.000 Mitarbeitenden an 70 Standorten präsent. ",
+          products: [
+            {
+              name:"PORT 4D",
+              description: "Ist die neuste Generation des effizienten Verkehrsmanagementsystems von Schindler, welches umfassende Zutritts-, Kommunikations-, Sicherheits- und Energiesparmöglichkeiten schafft. PORT hat die Art und Weise wie sich Personen reibungslos und effizient in Gebäuden horizontal durch Türen und vertikal durch den Aufzug bewegen, revolutioniert. ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"PORT Elevator",
+              description: "PORT Elevator ist die intelligente, als Zielrufsteuerung ausgelegte Aufzugssteuerung im Rahmen von PORT 4D. Es verbessert die Effizienz Ihrer Anlagen durch eine intelligente Fahrtensteuerung und erweitert die Möglichkeiten von Aufzügen. Diese können Teil eines Zutrittssystems sein und eine Vielzahl von Sonderfunktionen ermöglichen. ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"PORT 1 / PORT 4 Terminals",
+              description: "Das PORT Aufzugsterminal ist als Kontrollterminal auf den Etagen ein moderner „Schindler Lift-Boy“ (Aufzugszielruf; Orientierungshilfen; Zutrittskontrolle) ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"PORT Access",
+              description: "PORT Access ist das Zutrittskontrollsystem, mit umfassender Video-Gegensprechfunktionalität von PORT 4D. Durch die vollständige Integration mit PORT Elevator, wird die Steuerung des vertikalen und horizontalen Verkehrs im Gebäude möglich. ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"PORT 1Mini Terminal",
+              description: "Das PORT 1 mini ist ein Zutrittskartenleser mit digitalem Klingelschild. \n (Entriegelung der Tür über ein digitales Zutrittsmedium [Smartphone mit myPORT-App, RFID Chip]; Klingelfunktion) ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"PORT 4Home Terminal",
+              description: "PORT 4Home Terminal Das PORT 4 Home in Wohnungen /Büros ist ein persönliches Aufzugskontrollterminal mit integrierter Videogegensprechanlage.\n(Bereitstellung von Aufzügen für Gäste; Aufzugsruf aus der Wohnung; Videogegensprechverbindung zu Hauptzugängen; Klingelaufschaltung) ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"PORT 4Visitor Terminal",
+              description: "Das PORT 4 Visitor ist ein modernes Multifunktionsterminal für Hauptzugänge. (Sprach- und Videoanruf; Digitales Verzeichnis von Bewohner:innen; Entriegelung der Tür und automatischer Aufzugsruf über Ihr digitales Zutrittsmedium [Smartphone mit myPORT-App, RFID Chip]; Gästezutritt[CCC / QR-Leser]) ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"myPORT",
+              description: "Mit myPORT können autorisierte App-Nutzer*innen, Ihr Smartphone als Schlüssel zum Gebäude und als Gegensprechanlage verwenden. (Türen entriegeln, manuell aus der Ferne oder bei Annäherung; Aufzugszielruf, bei Annäherung; Videogegensprechen, von Überall; Gästesteuerung, von Überall) ",
+              imageUrl:
+              "",
+            },
+            {
+              name:"CoLab",
+              description: "Schindler CoLab ist eine offene, sichere und modulare Toolbox zur Gebäudeintegration. Sie ermöglicht,  Schindlerprodukte nahtlos in Gebäudeleittechnik zu integrieren und mit anderen Produkten zu verknüpfen. Dazu werden umfangreiche APIs und Tools, in Form von Softwareschnittstellen, Softwaredevelopment Kits und Hardwaremodulen bereitgestellt. Mit Hilfe von CoLab kann beispielsweise eine individuelle Gebäude App entwickelt werden, durch die PORT Access und PORT Elevator Systeme gesteuert werden können. ",
+              imageUrl:
+              "",
+            },
+
+
+
+          ],
+          links:[
+            {
+              label: "Schindler",
+              url: ": https://www.schindler.com/at/internet/de/aufzuege-und-fahrtreppen/produkte-und-dienstleistungen/transit-management/verkehrsmanagement.html ",
+              icon: "mdi-web",
+            },
+          ],
           tags: ["Aufzüge"],
         },
         {
@@ -142,7 +209,7 @@ export default {
           },
           tags: ["Zutrittssysteme"],
         },
-        {
+        /*{
           name: "formitas",
           subtitle: "Wir digitalisieren die Bauwelt",
           tags: ["BIM", "AR"],
@@ -151,13 +218,22 @@ export default {
           },
           imageUrl:
             "https://www.schau-ins-rheinland.de/wp-content/uploads/2019/07/formitas-1.jpg",
-        },
+        },*/
         {
           name: "Zumtobel",
           subtitle: "Innovative Lichtlösungen",
           contact: {
             email: "info@example.com",
           },
+          description: "Zumtobel, international führender Anbieter ganzheitlicher Lichtlösungen, macht das Zusammenspiel von Licht und Architektur erlebbar. Als Innovationsführer bietet Zumtobel ein umfassendes Portfolio an hochwertigen LED-Leuchten und Lichtmanagementsystemen für die professionelle Gebäudebeleuchtung in den Bereichen Büro, Bildung, Verkauf, Handel, Hotel und Wellness, Gesundheit, Kunst und Kultur sowie Industrie an. Die Marke Zumtobel steht seit über 60 Jahren für Innovation, einzigartige Produkt- und Servicequalität sowie für ausgezeichnetes Design und Nachhaltigkeit. Zumtobel bringt Lichtqualität und Energieeffizienz in Einklang und entwickelt maßgeschneiderte Lichtlösungen für messbaren Mehrwert.",
+          products: [
+            {
+              name:"Stehleuchte Epuria",
+              description:"Stehleuchte mit klassisch schlichtem und geradlinigem Design. Mit integriertem Sensor für Bewegungsdetektion, Helligkeitsmessung und Kommunikationsknoten der Konnektivitäts-Infrastruktur Wireless IoT Mesh. Manuell Bedienung erfolgt mittels EnOcean BLE Taster. ",
+              imageUrl: 
+                "https://www.zumtobel.com/PDB/resources/Photo/2011_products_584_L4/ZS_EPU_F_EPURIA_WH.jpg",
+            }
+          ],
           tags: ["Licht"],
           imageUrl:
             "https://www.zumtobel.com/media/startpage/Kunst_2100x975_01.jpg",
@@ -192,9 +268,29 @@ export default {
           subtitle: "Lösungen in der Elektrotechnik & Automation",
           imageUrl:
             "https://www.electrive.net/wp-content/uploads/2020/06/phoenix-contact-polen-poland-2020-01-min.png",
-          contact: {
-            email: "info@example.com",
-          },
+          contact:
+            /*{
+              email: "info@example.com",
+            },*/
+            {
+              name:"Frank Knafia",
+              position:"...",
+              email:"...",
+            },
+          
+          description: "Phoenix Contact ist ein unabhängiger Global Player. Kreative Lösungen aus Verbindungstechnik, Elektronik und Automation werden weltweit von über 17.100 begeisterten Menschen entwickelt, produziert und vertrieben. Ihre Arbeit verstehen sie als Beitrag zur Gestaltung einer smarten Welt. Als unabhängiges Familienunternehmen mit fast 100-jähriger Historie und einem Jahresumsatz von 2,4 Mrd. Euro entwickeln sie zukunftsweisende Produkte, Systeme und Lösungen. Lösungen für Elektrifizierung, Vernetzung und Automatisierung sind ihr Beitrag für eine Welt, in der regenerative Energie zum Nutzen aller zur Verfügung steht. Durch die Erfahrungen im hauseigenen Maschinen­bau ist Phoenix Contact mit den Anforderungen der Digitalisierung und des durchgängigen Datenflusses, vom Engineering durch die Fertigung und darüber hinaus, entlang des gesamten Produkt­lebenszyklus, vertraut. ",
+          links:[
+            {
+              label: "Smart Building Local",
+              url:"https://www.phoenixcontact.com/online/portal/de?1dmy&urile=wcm%3apath%3a/dede/web/main/solutions/subcategory_pages/Building_Our_Smart_Building_local/2e08c710-a6a2-4da8-ab17-fd6e527e4843 ",
+              icon:"mdi-web",
+            },
+            {  
+              label: "Gebauede Tour",
+              url:"https://vtc.view3.com/de/vt/PhoenixContact_Gebaeude_Tour/d/49840/siv/1 ",
+              icon:"mdi-web",
+            },
+          ],
           tags: ["Elektronik"],
         },
         {
@@ -225,12 +321,19 @@ export default {
           name: "pinestack",
           subtitle: "Die Plattform für effizientes Property Management",
           categories: ["Softwareplattform", "App"],
-          description: "---",
+          description: "Die Pinestack GmbH bietet eine Plattform für effizientes Property Management. Das integrative Smart Building-Betriebssystem ist darauf ausgelegt, Anwender:innen so viele Informationen wie möglich über Ihre Immobilie zu liefern und ist sofort einsatzbereit. Herausragende Schnittstellen-Architektur stellt sicher, dass sich Lösungen reibungslos in aktuelle Infrastrukturen integrieren. Pinestack führt Gebäude ins Internet der Dinge. So können Nutzer*innen ihren Gebäudebetrieb verwalten sowie die Performance des Gebäudes analysieren und benchmarken. Durch hohe Konnektivität können valide Live-Einblicke in den Betrieb von Immobilien, bis in die Feldebene, geliefert werden. So werden durch modulare Kommunikationslösungen Büros zu Smart Offices und Gebäude zu Smart Buildings.",
           imageUrl:
             "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1200/https://pinestack.io/wp-content/uploads/2019/02/ps_hero_image.png",
           contact: {
             email: "info@example.com",
           },
+          links:[
+            {
+              label: "pinestack",
+              url: "https://pinestack.io/smartoffice/ ",
+              icon: "mdi-web",
+            },
+          ], 
           tags: ["Softwareplattform", "App"],
         },
         {
@@ -390,6 +493,23 @@ export default {
               },
             },
           },
+        },
+        //Coming Soon
+        // {
+        //   name:"dormakaba",
+        //   subtitle:"",
+        //   imageUrl:"",
+        //   contact:"",
+        //   links:"",
+        // },
+        {
+          name:"IEE",
+          categories: ["Sensorik"],
+          subtitle:"Intelligente Sensorlösungen",
+          imageUrl:"https://iee-sensing.com/app/uploads/2021/10/smartbuildings-accesscontrol-tdexpress-keyvis.jpg",
+          contact:"",
+          links:"",
+          tags:["Sensorik"],
         },
       ]),
     };
