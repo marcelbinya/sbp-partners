@@ -103,12 +103,12 @@
               ></button>
               <template #content="props">
                 <div class="grid grid-cols-2 gap-2 w-64 h-36 bg-gray-200 border-4 border-white shadow-xl">
-                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-left')">Oben links</div>
-                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-right')">Oben rechts</div>
-                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('bottom-left')">Unten links</div>
-                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('bottom-right')">Unten rechts</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-left'); props.close();">Oben links</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-right'); props.close();">Oben rechts</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('bottom-left'); props.close();">Unten links</div>
+                  <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('bottom-right'); props.close();">Unten rechts</div>
                 </div>
-                <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('top-left')">Ganzer Bildschirm</div>
+                <div class="bg-gray-600 text-white hover:bg-gray-700 p-2" @click="callToDashboard('full'); props.close();">Ganzer Bildschirm</div>
               </template>
             </Popper>
           </div>
